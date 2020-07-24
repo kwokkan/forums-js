@@ -1,7 +1,7 @@
 {
   "name": "forums-js",
   "version": "1.0.0",
-  "description": "Forum in JS.",
+  "description": "Forums in JS.",
   "main": "index.js",
   "repository": "https://github.com/kwokkan/forums-js.git",
   "author": "kwokkan <kwokkan@users.noreply.github.com>",
