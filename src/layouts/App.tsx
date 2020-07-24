@@ -1,4 +1,5 @@
-import React from "react";
+import React, { Fragment } from "react";
+import { Announcement } from "./Announcement";
 import { Navigation } from "./Navigation";
 
 interface IProps {
@@ -7,6 +8,10 @@ interface IProps {
 
 export function App(props: IProps) {
     return (
-        <Navigation title={props.title}></Navigation>
+        <Fragment>
+            <Navigation title={props.title}></Navigation>
+
+            <Announcement title="Coming soon" message="Coming soon."></Announcement>
+        </Fragment>
     );
 }
