@@ -1,4 +1,5 @@
-import React, { Fragment } from "react";
+import React from "react";
+import { Container, Content, Header } from "rsuite";
 import { Announcement } from "./Announcement";
 import { Navigation } from "./Navigation";
 
@@ -8,10 +9,16 @@ interface IProps {
 
 export function App(props: IProps) {
     return (
-        <Fragment>
-            <Navigation title={props.title}></Navigation>
+        <div className="navbar-page">
+            <Container>
+                <Header>
+                    <Navigation title={props.title}></Navigation>
+                </Header>
 
-            <Announcement title="Coming soon" message="Coming soon."></Announcement>
-        </Fragment>
+                <Content>
+                    <Announcement title="Coming soon" message="Coming soon."></Announcement>
+                </Content>
+            </Container>
+        </div>
     );
 }
