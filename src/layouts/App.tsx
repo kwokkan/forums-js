@@ -5,6 +5,7 @@ import { Announcement } from "./Announcement";
 import { Forum } from "./Forum";
 import { Forums } from "./Forums";
 import { Navigation } from "./Navigation";
+import { Thread } from "./Thread";
 
 interface IProps {
     title: string;
@@ -25,6 +26,10 @@ export function App(props: IProps) {
 
                     {forums.map(x =>
                         <Forum key={x.id} forum={x}></Forum>
+                    )}
+
+                    {forums.filter(x => x.threads).flatMap(x => x.threads!).map(x =>
+                        <Thread key={x.id} thread={x}></Thread>
                     )}
                 </Content>
             </Container>

@@ -1,8 +1,22 @@
 import { IForum } from "../types/IForum";
+import { IUser } from "../types/IUser";
 
-const created = new Date();
 let forumId = 1;
 let threadId = 1;
+let messageId = 1;
+let userId = 1;
+
+const created = new Date();
+const user: IUser = {
+    id: userId++,
+    joinedDate: created,
+    name: "Admin"
+};
+const releaseNoteUser: IUser = {
+    id: userId++,
+    joinedDate: created,
+    name: "Release Notes"
+};
 
 export const forums: IForum[] = [
     {
@@ -14,17 +28,52 @@ export const forums: IForum[] = [
             {
                 id: threadId++,
                 created: created,
-                name: "Rules"
+                name: "Rules",
+                messages: [
+                    {
+                        id: messageId++,
+                        created: created,
+                        user: user,
+                        content: "Be nice."
+                    },
+                    {
+                        id: messageId++,
+                        created: created,
+                        user: user,
+                        content: "Don't be horrible."
+                    },
+                    {
+                        id: messageId++,
+                        created: created,
+                        user: user,
+                        content: "No spam."
+                    }
+                ]
             },
             {
                 id: threadId++,
                 created: created,
-                name: "Help & troubleshooting"
+                name: "Help & troubleshooting",
+                messages: [
+                    {
+                        id: messageId++,
+                        created: created,
+                        user: user,
+                        content: "Report bugs here."
+                    }
+                ]
             },
             {
                 id: threadId++,
                 created: created,
-                name: "Release - v1.0.0-alpha.1"
+                name: "Release - v1.0.0-alpha.1",
+                messages: [
+                    {
+                        id: messageId++,
+                        created: created,
+                        user: releaseNoteUser,
+                        content: "Coming soon."
+                    }]
             }
         ]
     },
@@ -37,7 +86,8 @@ export const forums: IForum[] = [
             {
                 id: threadId++,
                 created: created,
-                name: "Welcome thread"
+                name: "Welcome thread",
+                messages: []
             }
         ]
     },
