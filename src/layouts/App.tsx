@@ -1,6 +1,8 @@
 import React from "react";
 import { Container, Content, Header } from "rsuite";
+import { forums } from "../mocks/mockForums";
 import { Announcement } from "./Announcement";
+import { Forums } from "./Forums";
 import { Navigation } from "./Navigation";
 
 interface IProps {
@@ -17,6 +19,8 @@ export function App(props: IProps) {
 
                 <Content>
                     <Announcement title="Coming soon" message="Coming soon."></Announcement>
+
+                    <Forums forums={forums}></Forums>
                 </Content>
             </Container>
         </div>
