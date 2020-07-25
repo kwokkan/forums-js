@@ -2,6 +2,7 @@ import React from "react";
 import { Container, Content, Header } from "rsuite";
 import { forums } from "../mocks/mockForums";
 import { Announcement } from "./Announcement";
+import { Forum } from "./Forum";
 import { Forums } from "./Forums";
 import { Navigation } from "./Navigation";
 
@@ -21,6 +22,10 @@ export function App(props: IProps) {
                     <Announcement title="Coming soon" message="Coming soon."></Announcement>
 
                     <Forums forums={forums}></Forums>
+
+                    {forums.map(x =>
+                        <Forum key={x.id} forum={x}></Forum>
+                    )}
                 </Content>
             </Container>
         </div>

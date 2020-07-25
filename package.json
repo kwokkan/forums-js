@@ -1,6 +1,6 @@
 {
   "name": "forums-js",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha.1",
   "description": "Forums in JS.",
   "main": "index.js",
   "repository": "https://github.com/kwokkan/forums-js.git",
