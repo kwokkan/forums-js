@@ -9,7 +9,7 @@ export function Navigation(props: IProps) {
     return (
         <Navbar>
             <Navbar.Header>
-                <a href="#" className="navbar-brand logo">
+                <a href="/" className="navbar-brand logo">
                     {props.title}
                 </a>
             </Navbar.Header>

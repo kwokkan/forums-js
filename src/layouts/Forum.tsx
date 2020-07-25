@@ -1,6 +1,7 @@
-import React from "react";
+import React, { Fragment } from "react";
 import { Content, Panel, PanelGroup, Table } from "rsuite";
 import { IForum } from "../types/IForum";
+import { IThread } from "../types/IThread";
 
 const { Column, HeaderCell, Cell, Pagination } = Table;
 
@@ -15,21 +16,26 @@ export function Forum(props: IProps) {
         <Panel header={<h3>{forum.name}</h3>} bordered>
             <Content>
                 {forum.description &&
-                    <>
+                    <Fragment>
                         <p>
                             {forum.description}
                         </p>
 
                         <hr />
-                    </>
+                    </Fragment>
                 }
 
                 {forum.threads &&
                     <PanelGroup>
-                        <Table data={forum.threads} wordWrap>
-                            <Column flexGrow={1}>
+                        <Table data={forum.threads} autoHeight wordWrap>
+                            <Column flexGrow={11}>
                                 <HeaderCell>Threads</HeaderCell>
-                                <Cell dataKey="name" ></Cell>
+                                <Cell dataKey="name"></Cell>
+                            </Column>
+
+                            <Column flexGrow={1}>
+                                <HeaderCell>Last post</HeaderCell>
+                                <Cell>{(x: IThread) => x.created.toLocaleString()}</Cell>
                             </Column>
                         </Table>
 
