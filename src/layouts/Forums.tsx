@@ -3,7 +3,7 @@ import React from "react";
 import { Content, Panel, PanelGroup } from "rsuite";
 import { IForum } from "../types/IForum";
 
-interface IProps {
+export interface IProps {
     forums: IForum[];
 }
 

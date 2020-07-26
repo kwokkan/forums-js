@@ -1,12 +1,11 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { Container, Content, Header } from "rsuite";
-import { forums } from "../mocks/mockForums";
 import { Announcement } from "./Announcement";
-import { Forums } from "./Forums";
 import { Navigation } from "./Navigation";
 
 interface IProps {
     title: string;
+    children: ReactNode;
 }
 
 export function App(props: IProps) {
@@ -20,7 +19,7 @@ export function App(props: IProps) {
                 <Content>
                     <Announcement title="Coming soon" message="Coming soon."></Announcement>
 
-                    <Forums forums={forums}></Forums>
+                    {props.children}
                 </Content>
             </Container>
         </div>

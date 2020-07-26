@@ -1,12 +1,11 @@
-import App from 'next/app';
+import NextApp from 'next/app';
 import React from "react";
+import { App } from '../layouts/App';
 
 import "../styles/styles.scss";
 import "../styles/vendor.scss";
 
-
-
-class MyApp extends App {
+class MyApp extends NextApp {
     // Only uncomment this method if you have blocking data requirements for
     // every single page in your application. This disables the ability to
     // perform automatic static optimization, causing every page in your app to
@@ -22,7 +21,9 @@ class MyApp extends App {
     render() {
         const { Component, pageProps } = this.props;
         return (
-            <Component {...pageProps} />
+            <App title="Forums JS">
+                <Component {...pageProps} />
+            </App>
         )
     }
 }
