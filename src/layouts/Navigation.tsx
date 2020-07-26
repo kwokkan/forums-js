@@ -16,7 +16,7 @@ export function Navigation(props: IProps) {
 
             <Navbar.Body>
                 <Nav>
-                    <Nav.Item eventKey="1" icon={<Icon icon="home" />}>
+                    <Nav.Item href="/" eventKey="1" icon={<Icon icon="home" />}>
                         Home
                     </Nav.Item>
 
@@ -31,6 +31,9 @@ export function Navigation(props: IProps) {
                 </Nav>
 
                 <Nav pullRight>
+                    <Nav.Item icon={<Icon icon="github" />} href="https://github.com/kwokkan/forums-js" target="_blank" rel="noreferrer noopener">
+                        Fork me
+                    </Nav.Item>
                     <Nav.Item icon={<Icon icon="cog" />}>Settings</Nav.Item>
                 </Nav>
             </Navbar.Body>
