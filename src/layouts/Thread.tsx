@@ -3,7 +3,7 @@ import { Avatar, Content, FlexboxGrid, Panel, PanelGroup } from "rsuite";
 import { IThread } from "../types/IThread";
 import { acronym } from "../utils/stringUtils";
 
-interface IProps {
+export interface IProps {
     thread: IThread;
 }
 

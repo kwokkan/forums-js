@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { Fragment } from "react";
 import { Content, Panel, PanelGroup, Table } from "rsuite";
 import { IForum } from "../types/IForum";
@@ -30,7 +31,7 @@ export function Forum(props: IProps) {
                         <Table data={forum.threads} autoHeight wordWrap>
                             <Column flexGrow={11}>
                                 <HeaderCell>Threads</HeaderCell>
-                                <Cell dataKey="name"></Cell>
+                                <Cell>{(x: IThread) => <Link href="/threads/[id]" as={`/threads/${x.id}`}><a>{x.name}</a></Link>}</Cell>
                             </Column>
 
                             <Column flexGrow={1}>
