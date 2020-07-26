@@ -6,7 +6,7 @@ let threadId = 1;
 let messageId = 1;
 let userId = 1;
 
-const created = new Date();
+const created = new Date().toLocaleString();
 const user: IUser = {
     id: userId++,
     joinedDate: created,

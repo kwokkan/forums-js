@@ -5,7 +5,7 @@ import { IThread } from "../types/IThread";
 
 const { Column, HeaderCell, Cell, Pagination } = Table;
 
-interface IProps {
+export interface IProps {
     forum: IForum;
 }
 
