@@ -2,7 +2,7 @@ import { IMessage } from "./IMessage";
 
 export interface IThread {
     id: number;
-    created: Date;
+    created: number;
     name: string;
     messages: IMessage[];
 }

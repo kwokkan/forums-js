@@ -2,7 +2,7 @@ import { IUser } from "./IUser";
 
 export interface IMessage {
     id: number;
-    created: Date;
+    created: number;
     content: string;
     user: IUser;
 }
