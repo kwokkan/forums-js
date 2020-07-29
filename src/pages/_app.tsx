@@ -4,7 +4,6 @@ import { App } from '../layouts/App';
 import { Title } from '../layouts/Title';
 
 import "../styles/styles.scss";
-import "../styles/vendor.scss";
 
 class MyApp extends NextApp {
     // Only uncomment this method if you have blocking data requirements for
