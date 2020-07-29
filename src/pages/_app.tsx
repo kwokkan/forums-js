@@ -1,6 +1,7 @@
 import NextApp from 'next/app';
 import React from "react";
 import { App } from '../layouts/App';
+import { Title } from '../layouts/Title';
 
 import "../styles/styles.scss";
 import "../styles/vendor.scss";
@@ -22,6 +23,7 @@ class MyApp extends NextApp {
         const { Component, pageProps } = this.props;
         return (
             <App title="Forums JS">
+                <Title />
                 <Component {...pageProps} />
             </App>
         )
