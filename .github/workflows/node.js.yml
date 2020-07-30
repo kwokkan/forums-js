@@ -23,7 +23,7 @@ jobs:
 
     - name: Use Node.js ${{ matrix.node-version }}
       id: setup-node
-      uses: actions/setup-node@
+      uses: actions/setup-node@2
       with:
         node-version: ${{ matrix.node-version }}
         
@@ -33,7 +33,7 @@ jobs:
         echo "::set-output name=node::$(node -v)"
 
     - name: Cache
-      uses: actions/cache@v2.1.0
+      uses: actions/cache@v2
       with:
         path: |
           .next
