@@ -1,0 +1,5 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders with title 1`] = `null`;
+
+exports[`Renders without props 1`] = `null`;
