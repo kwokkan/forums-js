@@ -18,7 +18,7 @@ const releaseNoteUser: IUser = {
     name: "Release Notes"
 };
 
-export const forums: IForum[] = [
+export const mockForums: IForum[] = [
     {
         id: forumId++,
         created: created,

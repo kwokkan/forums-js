@@ -1,12 +1,12 @@
-export function parseIntParam(value?: string): number | null {
+export function parseIntParam(value?: string): number | undefined {
 	if (!value) {
-		return null;
+		return undefined;
 	}
 
 	const intValue = Number(value);
 
 	if (isNaN(intValue)) {
-		return null;
+		return undefined;
 	}
 
 	return intValue;

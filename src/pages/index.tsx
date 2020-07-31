@@ -2,7 +2,7 @@ import { GetServerSideProps } from "next";
 import { Fragment } from "react";
 import { Forums, IProps } from "../layouts/Forums";
 import { Title } from "../layouts/Title";
-import { forums } from "../mocks/mockForums";
+import { getForums } from "../services/forumService";
 
 export default ({ forums }: IProps) =>
     <Fragment>
@@ -10,10 +10,12 @@ export default ({ forums }: IProps) =>
         <Forums forums={forums} />
     </Fragment>;
 
-export const getServerSideProps: GetServerSideProps = () => {
-    return Promise.resolve({
+export const getServerSideProps: GetServerSideProps = async () => {
+    const forums = await getForums();
+
+    return {
         props: {
             forums: forums
         }
-    });
+    };
 }

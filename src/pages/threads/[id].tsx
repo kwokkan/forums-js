@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { IProps, Thread } from "../../layouts/Thread";
 import { Title } from "../../layouts/Title";
-import { forums } from "../../mocks/mockForums";
+import { mockForums } from "../../mocks/mockForums";
 import { GetTypedServerSideProps } from "../../types/pageTypes";
 import { parseIntParam } from "../../utils/paramUtil";
 
@@ -14,7 +14,7 @@ export default ({ thread }: IProps) =>
 export const getServerSideProps: GetTypedServerSideProps<{ id: string }> = (context) => {
     const id = parseIntParam(context.params?.id);
 
-    const thread = forums.filter(x => x.threads).flatMap(x => x.threads!).find(x => x.id == id);
+    const thread = mockForums.filter(x => x.threads).flatMap(x => x.threads!).find(x => x.id == id);
 
     return Promise.resolve({
         props: {
