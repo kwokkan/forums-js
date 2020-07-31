@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 import { Dropdown, Icon, Nav, Navbar } from "rsuite";
 
@@ -9,16 +10,18 @@ export function Navigation(props: IProps) {
     return (
         <Navbar>
             <Navbar.Header>
-                <a href="/" className="navbar-brand logo">
-                    {props.title}
-                </a>
+                <Link href="/">
+                    <a className="navbar-brand logo">{props.title}</a>
+                </Link>
             </Navbar.Header>
 
             <Navbar.Body>
                 <Nav>
-                    <Nav.Item href="/" eventKey="1" icon={<Icon icon="home" />}>
-                        Home
-                    </Nav.Item>
+                    <Link href="/" passHref>
+                        <Nav.Item eventKey="1" icon={<Icon icon="home" />}>
+                            Home
+                        </Nav.Item>
+                    </Link>
 
                     <Nav.Item eventKey="2">Forums</Nav.Item>
                     <Nav.Item eventKey="3">New Posts</Nav.Item>
