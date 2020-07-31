@@ -1,0 +1,104 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders with description 1`] = `
+<div
+  className="rs-panel-group"
+>
+  <div
+    className="rs-panel rs-panel-default rs-panel-bordered"
+  >
+    <div
+      className="rs-panel-heading"
+      onClick={[Function]}
+      role="rowheader"
+      tabIndex={-1}
+    >
+      <h3
+        className="rs-panel-title"
+      >
+        <a
+          href="/forums/1"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          First forum
+        </a>
+      </h3>
+    </div>
+    <div
+      className="rs-panel-body"
+    >
+      <div
+        className="rs-content"
+      >
+        <p>
+          Forum description.
+        </p>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Renders with multiple forums 1`] = `
+<div
+  className="rs-panel-group"
+>
+  <div
+    className="rs-panel rs-panel-default rs-panel-bordered"
+  >
+    <div
+      className="rs-panel-heading"
+      onClick={[Function]}
+      role="rowheader"
+      tabIndex={-1}
+    >
+      <h3
+        className="rs-panel-title"
+      >
+        <a
+          href="/forums/1"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          First forum
+        </a>
+      </h3>
+    </div>
+    <div
+      className="rs-panel-body"
+    />
+  </div>
+  <div
+    className="rs-panel rs-panel-default rs-panel-bordered"
+  >
+    <div
+      className="rs-panel-heading"
+      onClick={[Function]}
+      role="rowheader"
+      tabIndex={-1}
+    >
+      <h3
+        className="rs-panel-title"
+      >
+        <a
+          href="/forums/2"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          Second forum
+        </a>
+      </h3>
+    </div>
+    <div
+      className="rs-panel-body"
+    />
+  </div>
+</div>
+`;
+
+exports[`Renders with no forums 1`] = `
+<div
+  className="rs-panel-group"
+/>
+`;
