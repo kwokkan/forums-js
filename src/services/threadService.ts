@@ -1,5 +1,5 @@
-import { mockForums } from "../mocks/mockForums";
 import { IThread } from "../types/IThread";
+import { mockForums } from "./mockForums";
 
 export function getThreadById(id?: number): Promise<IThread | undefined> {
     const thread = mockForums
