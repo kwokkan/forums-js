@@ -1,5 +1,5 @@
 
-export function acronym(value?: string, limit?: number | undefined): string {
+export function acronym(value?: string, limit?: number): string {
     if (!value) {
         return "";
     }

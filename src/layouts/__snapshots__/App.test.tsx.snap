@@ -1,0 +1,262 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders with custom child 1`] = `
+<div
+  className="navbar-page"
+>
+  <div
+    className="rs-container"
+  >
+    <div
+      className="rs-header"
+    >
+      <div
+        className="rs-navbar rs-navbar-default"
+        role="navigation"
+      >
+        <div
+          className="rs-navbar-header"
+        >
+          <a
+            className="navbar-brand logo"
+            href="/"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            Test app
+          </a>
+        </div>
+        <div
+          className="rs-navbar-body"
+        >
+          <div
+            className="rs-nav rs-nav-default rs-navbar-nav rs-nav-horizontal"
+          >
+            <ul>
+              <li
+                className="rs-nav-item"
+              >
+                <a
+                  className="rs-nav-item-content"
+                  href="/"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <i
+                    className="rs-icon rs-icon-home"
+                  />
+                  Home
+                  <span
+                    className="rs-ripple-pond"
+                  >
+                    <span
+                      className="rs-ripple"
+                      style={Object {}}
+                    />
+                  </span>
+                </a>
+              </li>
+              <li
+                className="rs-nav-item"
+              >
+                <a
+                  className="rs-nav-item-content"
+                  onClick={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  Forums
+                  <span
+                    className="rs-ripple-pond"
+                  >
+                    <span
+                      className="rs-ripple"
+                      style={Object {}}
+                    />
+                  </span>
+                </a>
+              </li>
+              <li
+                className="rs-nav-item"
+              >
+                <a
+                  className="rs-nav-item-content"
+                  onClick={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  New Posts
+                  <span
+                    className="rs-ripple-pond"
+                  >
+                    <span
+                      className="rs-ripple"
+                      style={Object {}}
+                    />
+                  </span>
+                </a>
+              </li>
+              <li
+                className="rs-dropdown rs-dropdown-placement-bottom-start"
+                role="menu"
+              >
+                <ul
+                  className="rs-dropdown-menu"
+                  role="menu"
+                >
+                  <li
+                    className="rs-dropdown-item"
+                  >
+                    <a
+                      className="rs-dropdown-item-content"
+                      onClick={[Function]}
+                      tabIndex={-1}
+                    >
+                      Company
+                    </a>
+                  </li>
+                  <li
+                    className="rs-dropdown-item"
+                  >
+                    <a
+                      className="rs-dropdown-item-content"
+                      onClick={[Function]}
+                      tabIndex={-1}
+                    >
+                      Team
+                    </a>
+                  </li>
+                  <li
+                    className="rs-dropdown-item"
+                  >
+                    <a
+                      className="rs-dropdown-item-content"
+                      onClick={[Function]}
+                      tabIndex={-1}
+                    >
+                      Contact
+                    </a>
+                  </li>
+                </ul>
+                <a
+                  className="rs-btn rs-btn-subtle rs-dropdown-toggle"
+                  onClick={[Function]}
+                  tabIndex={0}
+                >
+                  About
+                  <span
+                    className="rs-dropdown-toggle-caret"
+                  />
+                  <span
+                    className="rs-ripple-pond"
+                  >
+                    <span
+                      className="rs-ripple"
+                      style={Object {}}
+                    />
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+          <div
+            className="rs-nav rs-nav-default rs-navbar-nav rs-navbar-right rs-nav-horizontal"
+          >
+            <ul>
+              <li
+                className="rs-nav-item"
+              >
+                <a
+                  className="rs-nav-item-content"
+                  href="https://github.com/kwokkan/forums-js"
+                  onClick={[Function]}
+                  rel="noreferrer noopener"
+                  role="button"
+                  tabIndex={0}
+                  target="_blank"
+                >
+                  <i
+                    className="rs-icon rs-icon-github"
+                  />
+                  Fork me
+                  <span
+                    className="rs-ripple-pond"
+                  >
+                    <span
+                      className="rs-ripple"
+                      style={Object {}}
+                    />
+                  </span>
+                </a>
+              </li>
+              <li
+                className="rs-nav-item"
+              >
+                <a
+                  className="rs-nav-item-content"
+                  onClick={[Function]}
+                  role="button"
+                  tabIndex={0}
+                >
+                  <i
+                    className="rs-icon rs-icon-cog"
+                  />
+                  Settings
+                  <span
+                    className="rs-ripple-pond"
+                  >
+                    <span
+                      className="rs-ripple"
+                      style={Object {}}
+                    />
+                  </span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="rs-content"
+    >
+      <div
+        className="rs-message rs-message-info rs-message-show rs-message-has-title rs-message-has-icon"
+      >
+        <div
+          className="rs-message-container"
+        >
+          <div
+            className="rs-message-icon-wrapper"
+          >
+            <i
+              className="rs-icon rs-icon-info"
+            />
+          </div>
+          <div
+            className="rs-message-content"
+          >
+            <h5
+              className="rs-message-header"
+            >
+              Coming soon
+            </h5>
+            <div
+              className="rs-message-body"
+            >
+              <p>
+                Coming soon.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <p>
+        Test child
+      </p>
+    </div>
+  </div>
+</div>
+`;
