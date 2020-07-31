@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { IProps, Thread } from "../../layouts/Thread";
 import { Title } from "../../layouts/Title";
-import { mockForums } from "../../mocks/mockForums";
+import { getThreadById } from "../../services/threadService";
 import { GetTypedServerSideProps } from "../../types/pageTypes";
 import { parseIntParam } from "../../utils/paramUtil";
 
@@ -11,14 +11,14 @@ export default ({ thread }: IProps) =>
         <Thread thread={thread} />
     </Fragment>;
 
-export const getServerSideProps: GetTypedServerSideProps<{ id: string }> = (context) => {
+export const getServerSideProps: GetTypedServerSideProps<{ id: string }> = async (context) => {
     const id = parseIntParam(context.params?.id);
 
-    const thread = mockForums.filter(x => x.threads).flatMap(x => x.threads!).find(x => x.id == id);
+    const thread = await getThreadById(id);
 
-    return Promise.resolve({
+    return {
         props: {
             thread: thread
         }
-    });
+    };
 }
