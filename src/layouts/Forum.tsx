@@ -14,7 +14,7 @@ export function Forum(props: IProps) {
     const forum = props.forum;
 
     return (
-        <Panel header={<h3>{forum.name}</h3>} bordered>
+        <Panel header={<h3>{forum.name}</h3>}>
             <Content>
                 {forum.description &&
                     <Fragment>
