@@ -1,0 +1,90 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders with messages 1`] = `
+<div
+  className="rs-panel rs-panel-default"
+>
+  <div
+    className="rs-panel-heading"
+    onClick={[Function]}
+    role="rowheader"
+    tabIndex={-1}
+  >
+    <h3
+      className="rs-panel-title"
+    >
+      Test thread
+    </h3>
+  </div>
+  <div
+    className="rs-panel-body"
+  >
+    <div
+      className="rs-panel-group"
+    >
+      <div
+        className="rs-panel rs-panel-default"
+      >
+        <div
+          className="rs-panel-body"
+        >
+          <div
+            className="rs-content"
+          >
+            <div
+              className="rs-flex-box-grid rs-flex-box-grid-top rs-flex-box-grid-start"
+            >
+              <div
+                className="rs-flex-box-grid-item rs-flex-box-grid-item-0"
+              >
+                <div
+                  className="rs-avatar mr-3 rs-avatar-lg"
+                  title="Test user"
+                >
+                  Tu
+                </div>
+              </div>
+              <div
+                className="rs-flex-box-grid-item rs-flex-box-grid-item-0"
+              >
+                <p>
+                  1,583,107,200,000
+                </p>
+                <p>
+                  First !!!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Renders with no messages 1`] = `
+<div
+  className="rs-panel rs-panel-default"
+>
+  <div
+    className="rs-panel-heading"
+    onClick={[Function]}
+    role="rowheader"
+    tabIndex={-1}
+  >
+    <h3
+      className="rs-panel-title"
+    >
+      Test thread
+    </h3>
+  </div>
+  <div
+    className="rs-panel-body"
+  >
+    <div
+      className="rs-panel-group"
+    />
+  </div>
+</div>
+`;
