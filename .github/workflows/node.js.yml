@@ -48,5 +48,24 @@ jobs:
     - run: yarn build
 
     - run: yarn test
-    
-    - uses: codecov/codecov-action@v1
+
+    - uses: actions/upload-artifact@v2
+      with:
+        name: coverage-artifact
+        path: coverage/
+
+  upload-coverage:
+
+    needs: [build]
+
+    runs-on: ubuntu-latest
+
+    timeout-minutes: 2
+
+    steps:
+      - uses: actions/download-artifact@v2
+        with:
+          name: coverage-artifact
+
+      - uses: codecov/codecov-action@v1
+
