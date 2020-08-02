@@ -23,6 +23,14 @@ exports[`Renders with custom child 1`] = `
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
+            <img
+              alt="Logo"
+              className="mr-3"
+              height="24"
+              src="/logo.png"
+              title="Test app"
+              width="24"
+            />
             Test app
           </a>
         </div>

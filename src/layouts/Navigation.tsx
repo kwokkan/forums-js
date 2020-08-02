@@ -11,7 +11,10 @@ export function Navigation(props: IProps) {
         <Navbar>
             <Navbar.Header>
                 <Link href="/">
-                    <a className="navbar-brand logo">{props.title}</a>
+                    <a className="navbar-brand logo">
+                        <img className="mr-3" src="/logo.png" title={props.title} alt="Logo" width="24" height="24" />
+                        {props.title}
+                    </a>
                 </Link>
             </Navbar.Header>
 
