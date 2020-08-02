@@ -10,8 +10,8 @@
     "build": "next build",
     "dev": "next",
     "start": "next start",
-    "test": "jest",
-    "test:update": "jest -u"
+    "test": "jest --runInBand",
+    "test:update": "jest --runInBand -u"
   },
   "dependencies": {
     "react": "16.13.1",

@@ -1,4 +1,5 @@
 module.exports = {
+    cacheDirectory: "cache/jest",
     collectCoverage: true,
     collectCoverageFrom: [
         "src/**/*.{js,jsx,ts,tsx}",
