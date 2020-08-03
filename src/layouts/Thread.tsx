@@ -1,6 +1,7 @@
 import React from "react";
 import { Avatar, Content, FlexboxGrid, Panel, PanelGroup } from "rsuite";
 import { IThread } from "../types/IThread";
+import { formatDate } from "../utils/dateUtils";
 import { acronym } from "../utils/stringUtils";
 
 export interface IProps {
@@ -22,7 +23,7 @@ export function Thread(props: IProps) {
                                 </FlexboxGrid.Item>
 
                                 <FlexboxGrid.Item>
-                                    <p>{x.created.toLocaleString()}</p>
+                                    <p>{formatDate(x.created)}</p>
                                     <p>{x.content}</p>
                                 </FlexboxGrid.Item>
                             </FlexboxGrid>

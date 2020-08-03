@@ -3,6 +3,7 @@ import React, { Fragment } from "react";
 import { Content, Panel, PanelGroup, Table } from "rsuite";
 import { IForum } from "../types/IForum";
 import { IThread } from "../types/IThread";
+import { formatDate } from "../utils/dateUtils";
 
 const { Column, HeaderCell, Cell, Pagination } = Table;
 
@@ -36,7 +37,7 @@ export function Forum(props: IProps) {
 
                             <Column flexGrow={1}>
                                 <HeaderCell>Last post</HeaderCell>
-                                <Cell>{(x: IThread) => x.created.toLocaleString()}</Cell>
+                                <Cell>{(x: IThread) => formatDate(x.created)}</Cell>
                             </Column>
                         </Table>
 
