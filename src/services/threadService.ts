@@ -8,5 +8,10 @@ export async function getThreadById(id?: number): Promise<IThread | undefined> {
 
     const thread = await repo.getThreadById(id);
 
+    if (thread) {
+        const messages = await repo.getMessagesByThreadId(id);
+        thread.messages = messages;
+    }
+
     return thread;
 }
