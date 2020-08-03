@@ -1,11 +1,12 @@
 import { IThread } from "../types/IThread";
-import { mockForums } from "./mockForums";
+import * as repo from "./../repositories";
 
-export function getThreadById(id?: number): Promise<IThread | undefined> {
-    const thread = mockForums
-        .filter(x => x.threads)
-        .flatMap(x => x.threads!)
-        .find(x => x.id == id);
+export async function getThreadById(id?: number): Promise<IThread | undefined> {
+    if (id === undefined) {
+        return;
+    }
 
-    return Promise.resolve(thread);
+    const thread = await repo.getThreadById(id);
+
+    return thread;
 }

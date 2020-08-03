@@ -8,6 +8,11 @@ export async function getForumById(id?: number): Promise<IForum | undefined> {
 
 	const forum = await repo.getForumById(id);
 
+	if (forum) {
+		const threads = await repo.getThreadsByForumId(id);
+		forum.threads = threads;
+	}
+
 	return forum;
 }
 
