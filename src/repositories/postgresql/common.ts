@@ -10,9 +10,9 @@ const pool = new Pool({
     application_name: "forums-js"
 });
 
-export async function runQuery<TModel>(query: string): Promise<TModel[]> {
+export async function runQuery<TModel>(query: string, values?: any[]): Promise<TModel[]> {
     try {
-        const result = await pool.query<TModel>(query);
+        const result = await pool.query<TModel>(query, values);
 
         return result.rows;
     }
