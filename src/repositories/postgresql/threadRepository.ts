@@ -1,7 +1,7 @@
 import { IThread } from "../../types/IThread";
 import { runQuery } from "./common";
 
-interface ThreadTable {
+interface IThreadTable {
     thread_pk: number;
     created: Date;
     name: string;
@@ -10,7 +10,7 @@ interface ThreadTable {
 }
 
 export async function getThreadById(id: number): Promise<IThread | undefined> {
-    const rows = await runQuery<ThreadTable>(`select thread_pk, created, name, createdby_user_fk, forum_fk from thread where thread_pk = $1`, [id]);
+    const rows = await runQuery<IThreadTable>(`select thread_pk, created, name, createdby_user_fk, forum_fk from thread where thread_pk = $1`, [id]);
 
     return rows.map(x => ({
         id: x.thread_pk,
@@ -21,7 +21,7 @@ export async function getThreadById(id: number): Promise<IThread | undefined> {
 }
 
 export async function getThreadsByForumId(forumId: number): Promise<IThread[]> {
-    const rows = await runQuery<ThreadTable>(`select thread_pk, created, name, createdby_user_fk, forum_fk from thread where forum_fk = $1`, [forumId]);
+    const rows = await runQuery<IThreadTable>(`select thread_pk, created, name, createdby_user_fk, forum_fk from thread where forum_fk = $1`, [forumId]);
 
     return rows.map(x => ({
         id: x.thread_pk,

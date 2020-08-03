@@ -1,7 +1,7 @@
 import { IForum } from "../../types/IForum";
 import { runQuery } from "./common";
 
-interface ForumTable {
+interface IForumTable {
     forum_pk: number;
     created: Date;
     name: string;
@@ -10,7 +10,7 @@ interface ForumTable {
 }
 
 export async function getForumById(id: number): Promise<IForum | undefined> {
-    const rows = await runQuery<ForumTable>(`select forum_pk, created, name, description, createdby_user_fk from forum where forum_pk = $1`, [id]);
+    const rows = await runQuery<IForumTable>(`select forum_pk, created, name, description, createdby_user_fk from forum where forum_pk = $1`, [id]);
 
     return rows.map(x => ({
         id: x.forum_pk,
@@ -21,7 +21,7 @@ export async function getForumById(id: number): Promise<IForum | undefined> {
 }
 
 export async function getForums(): Promise<IForum[]> {
-    const rows = await runQuery<ForumTable>(`select forum_pk, created, name, description, createdby_user_fk from forum`);
+    const rows = await runQuery<IForumTable>(`select forum_pk, created, name, description, createdby_user_fk from forum`);
 
     return rows.map(x => ({
         id: x.forum_pk,

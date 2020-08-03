@@ -1,7 +1,7 @@
 import { IMessage } from "../../types/IMessage";
 import { runQuery } from "./common";
 
-interface MessageTable {
+interface IMessageTable {
     message_pk: number;
     created: Date;
     content: string;
@@ -10,7 +10,7 @@ interface MessageTable {
 }
 
 export async function getMessagesByThreadId(threadId: number): Promise<IMessage[]> {
-    const rows = await runQuery<MessageTable>(`select message_pk, created, content, createdby_user_fk, thread_fk from message where thread_fk = $1`, [threadId]);
+    const rows = await runQuery<IMessageTable>(`select message_pk, created, content, createdby_user_fk, thread_fk from message where thread_fk = $1`, [threadId]);
 
     return rows.map(x => ({
         id: x.message_pk,
