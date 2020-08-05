@@ -5,12 +5,6 @@ import { getForumById } from "../../services/forumService";
 import { GetTypedServerSideProps } from "../../types/pageTypes";
 import { parseIntParam } from "../../utils/paramUtil";
 
-export default ({ forum }: IProps) =>
-    <Fragment>
-        <Title title={forum.name} />
-        <Forum forum={forum} />
-    </Fragment>;
-
 export const getServerSideProps: GetTypedServerSideProps<{ id: string }> = async (context) => {
     const id = parseIntParam(context.params?.id);
 
@@ -22,3 +16,10 @@ export const getServerSideProps: GetTypedServerSideProps<{ id: string }> = async
         }
     };
 }
+
+const Page = ({ forum }: IProps) =>
+    <Fragment>
+        <Title title={forum.name} />
+        <Forum forum={forum} />
+    </Fragment>;
+export default Page;

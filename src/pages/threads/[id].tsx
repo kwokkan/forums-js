@@ -5,12 +5,6 @@ import { getThreadById } from "../../services/threadService";
 import { GetTypedServerSideProps } from "../../types/pageTypes";
 import { parseIntParam } from "../../utils/paramUtil";
 
-export default ({ thread }: IProps) =>
-    <Fragment>
-        <Title title={thread.name} />
-        <Thread thread={thread} />
-    </Fragment>;
-
 export const getServerSideProps: GetTypedServerSideProps<{ id: string }> = async (context) => {
     const id = parseIntParam(context.params?.id);
 
@@ -22,3 +16,10 @@ export const getServerSideProps: GetTypedServerSideProps<{ id: string }> = async
         }
     };
 }
+
+const Page = ({ thread }: IProps) =>
+    <Fragment>
+        <Title title={thread.name} />
+        <Thread thread={thread} />
+    </Fragment>;
+export default Page;

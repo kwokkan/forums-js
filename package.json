@@ -11,7 +11,8 @@
     "dev": "next",
     "start": "next start",
     "test": "jest --runInBand",
-    "test:update": "jest --runInBand -u"
+    "test:update": "jest --runInBand -u",
+    "test:watch": "jest --runInBand --watch"
   },
   "dependencies": {
     "react": "16.13.1",
@@ -21,12 +22,14 @@
   "devDependencies": {
     "@types/jest": "26.0.8",
     "@types/node": "14.0.27",
+    "@types/pg": "7.14.4",
     "@types/react": "16.9.44",
     "@types/react-dom": "16.9.8",
     "@types/react-test-renderer": "16.9.3",
     "babel-jest": "26.2.2",
     "jest": "26.2.2",
     "next": "9.5.1",
+    "pg": "8.3.0",
     "react-test-renderer": "16.13.1",
     "sass": "1.26.10",
     "typescript": "3.9.7"

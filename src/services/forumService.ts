@@ -1,14 +1,23 @@
 import { IForum } from "../types/IForum";
-import { mockForums } from "./mockForums";
+import * as repo from "./../repositories";
 
-export function getForumById(id?: number): Promise<IForum | undefined> {
-	const forum = mockForums.find(x => x.id == id);
+export async function getForumById(id?: number): Promise<IForum | undefined> {
+	if (id === undefined) {
+		return;
+	}
 
-	return Promise.resolve(forum);
+	const forum = await repo.getForumById(id);
+
+	if (forum) {
+		const threads = await repo.getThreadsByForumId(id);
+		forum.threads = threads;
+	}
+
+	return forum;
 }
 
-export function getForums(): Promise<IForum[]> {
-	const forums = mockForums;
+export async function getForums(): Promise<IForum[]> {
+	const forums = await repo.getForums();
 
-	return Promise.resolve(forums);
+	return forums;
 }

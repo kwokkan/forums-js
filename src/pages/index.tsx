@@ -4,12 +4,6 @@ import { Title } from "../layouts/Title";
 import { getForums } from "../services/forumService";
 import { GetTypedServerSideProps } from "../types/pageTypes";
 
-export default ({ forums }: IProps) =>
-    <Fragment>
-        <Title />
-        <Forums forums={forums} />
-    </Fragment>;
-
 export const getServerSideProps: GetTypedServerSideProps<{}> = async () => {
     const forums = await getForums();
 
@@ -19,3 +13,10 @@ export const getServerSideProps: GetTypedServerSideProps<{}> = async () => {
         }
     };
 }
+
+const Page = ({ forums }: IProps) =>
+    <Fragment>
+        <Title />
+        <Forums forums={forums} />
+    </Fragment>;
+export default Page;

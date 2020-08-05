@@ -340,6 +340,7 @@ ASALocalRun/
 healthchecksdb
 
 # Custom
+.env*.local
 /.next/
 /cache/
 /coverage/
