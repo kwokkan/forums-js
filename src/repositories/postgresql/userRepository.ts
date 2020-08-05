@@ -1,7 +1,7 @@
 import { IUser } from "../../types/IUser";
 import { runQuery } from "./common";
 
-interface IUserTable {
+export interface IUserTable {
     user_pk: number;
     joinedDate: Date;
     name: string;
