@@ -7,5 +7,6 @@ export const pool = new Pool({
     database: env.DB_DATABASE,
     user: env.DB_USERNAME,
     password: env.DB_PASSWORD,
-    application_name: "forums-js"
+    application_name: "forums-js",
+    ssl: true
 });
