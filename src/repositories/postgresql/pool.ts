@@ -8,7 +8,7 @@ export const pool = new Pool({
     user: env.DB_USERNAME,
     password: env.DB_PASSWORD,
     application_name: "forums-js",
-    ssl: {
+    ssl: env.DB_SSL === "true" ? {
         rejectUnauthorized: false
-    }
+    } : undefined
 });
