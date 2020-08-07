@@ -1,6 +1,6 @@
 import Link from "next/link";
 import React from "react";
-import { Dropdown, Icon, Nav, Navbar } from "rsuite";
+import { Icon, Nav, Navbar } from "rsuite";
 
 interface IProps {
     title: string;
@@ -29,11 +29,11 @@ export function Navigation(props: IProps) {
                     <Nav.Item eventKey="2">Forums</Nav.Item>
                     <Nav.Item eventKey="3">New Posts</Nav.Item>
 
-                    <Dropdown title="About">
-                        <Dropdown.Item eventKey="4">Company</Dropdown.Item>
-                        <Dropdown.Item eventKey="5">Team</Dropdown.Item>
-                        <Dropdown.Item eventKey="6">Contact</Dropdown.Item>
-                    </Dropdown>
+                    <Link href="/about" passHref>
+                        <Nav.Item eventKey="4">
+                            About
+                        </Nav.Item>
+                    </Link>
                 </Nav>
 
                 <Nav pullRight>

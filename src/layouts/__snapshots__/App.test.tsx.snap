@@ -107,56 +107,17 @@ exports[`Renders with custom child 1`] = `
                 </a>
               </li>
               <li
-                className="rs-dropdown rs-dropdown-placement-bottom-start"
-                role="menu"
+                className="rs-nav-item"
               >
-                <ul
-                  className="rs-dropdown-menu"
-                  role="menu"
-                >
-                  <li
-                    className="rs-dropdown-item"
-                  >
-                    <a
-                      className="rs-dropdown-item-content"
-                      onClick={[Function]}
-                      tabIndex={-1}
-                    >
-                      Company
-                    </a>
-                  </li>
-                  <li
-                    className="rs-dropdown-item"
-                  >
-                    <a
-                      className="rs-dropdown-item-content"
-                      onClick={[Function]}
-                      tabIndex={-1}
-                    >
-                      Team
-                    </a>
-                  </li>
-                  <li
-                    className="rs-dropdown-item"
-                  >
-                    <a
-                      className="rs-dropdown-item-content"
-                      onClick={[Function]}
-                      tabIndex={-1}
-                    >
-                      Contact
-                    </a>
-                  </li>
-                </ul>
                 <a
-                  className="rs-btn rs-btn-subtle rs-dropdown-toggle"
+                  className="rs-nav-item-content"
+                  href="/about"
                   onClick={[Function]}
+                  onMouseEnter={[Function]}
+                  role="button"
                   tabIndex={0}
                 >
                   About
-                  <span
-                    className="rs-dropdown-toggle-caret"
-                  />
                   <span
                     className="rs-ripple-pond"
                   >
