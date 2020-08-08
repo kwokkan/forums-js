@@ -40,7 +40,9 @@ export function Navigation(props: IProps) {
                     <Nav.Item icon={<Icon icon="github" />} href="https://github.com/kwokkan/forums-js" target="_blank" rel="noreferrer noopener">
                         Fork me
                     </Nav.Item>
-                    <Nav.Item icon={<Icon icon="cog" />}>Settings</Nav.Item>
+                    <Link href="/settings" passHref>
+                        <Nav.Item icon={<Icon icon="cog" />}>Settings</Nav.Item>
+                    </Link>
                 </Nav>
             </Navbar.Body>
         </Navbar>
