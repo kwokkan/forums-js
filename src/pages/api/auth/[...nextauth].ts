@@ -2,6 +2,7 @@ import { IncomingMessage, ServerResponse } from "http";
 import NextAuth, { IProviderOptions } from "next-auth";
 import Providers from "next-auth/providers";
 import { getOrCreateAuthUser } from "../../../services/userService";
+import { logDebug } from "../../../utils/logging";
 
 const options: IProviderOptions = {
     providers: [
@@ -23,21 +24,22 @@ const options: IProviderOptions = {
         //    return Promise.resolve(url);
         //},
         jwt: async (token, user, account, profile, isNewUser) => {
-            //console.debug("[callbacks:jwt]", token, user, account, profile, isNewUser);
+            logDebug("[callbacks:jwt]", token, user, account, profile, isNewUser);
 
             if (account) {
-                //console.debug("[callbacks:jwt]", "Creating session");
+                logDebug("[callbacks:jwt]", "Creating session");
                 const authUser = await getOrCreateAuthUser(account.provider, account.id, user.name);
 
                 token.forumsUser = authUser;
 
-                //console.debug("[callbacks:jwt]", "Created session", token);
+                logDebug("[callbacks:jwt]", "Created session", token);
             }
 
             return token;
         },
         session: (session, user, sessionToken) => {
-            //console.debug("[callbacks:session]", session, user, sessionToken);
+            logDebug("[callbacks:session]", session, user, sessionToken);
+
             session.forumsUser = user.forumsUser;
 
             return Promise.resolve(session);
