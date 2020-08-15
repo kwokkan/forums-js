@@ -53,7 +53,7 @@ declare module "next-auth/client" {
 
     export function signOut(): void;
 
-    export function useSession(): [INextSession, bool];
+    export function useSession(): [INextSession | null, boolean];
 }
 
 declare module "next-auth/providers" {
