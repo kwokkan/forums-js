@@ -1,11 +1,13 @@
 import React, { ReactNode } from "react";
 import { Container, Content, Header } from "rsuite";
+import { IUser } from "../types/IUser";
 import { Announcement } from "./Announcement";
 import { Navigation } from "./Navigation";
 
 interface IProps {
     title: string;
     children: ReactNode;
+    user?: IUser;
 }
 
 export function App(props: IProps) {
@@ -13,7 +15,7 @@ export function App(props: IProps) {
         <div className="navbar-page">
             <Container>
                 <Header>
-                    <Navigation title={props.title}></Navigation>
+                    <Navigation title={props.title} user={props.user}></Navigation>
                 </Header>
 
                 <Content>

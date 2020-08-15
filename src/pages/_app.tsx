@@ -1,32 +1,26 @@
-import NextApp from 'next/app';
+import { getSession, Provider } from "next-auth/client";
 import React from "react";
-import { App } from '../layouts/App';
-import { Title } from '../layouts/Title';
+import { SessionAppWrapper } from "../layouts/SessionAppWrapper";
+import { GetTypedServerSideProps } from '../types/pageTypes';
 
 import "../styles/styles.scss";
 
-class MyApp extends NextApp {
-    // Only uncomment this method if you have blocking data requirements for
-    // every single page in your application. This disables the ability to
-    // perform automatic static optimization, causing every page in your app to
-    // be server-side rendered.
-    //
-    // static async getInitialProps(appContext) {
-    //   // calls page's `getInitialProps` and fills `appProps.pageProps`
-    //   const appProps = await App.getInitialProps(appContext);
-    //
-    //   return { ...appProps }
-    // }
+export const getServerSideProps: GetTypedServerSideProps<{}> = async (context) => {
+    const session = await getSession(context);
 
-    render() {
-        const { Component, pageProps } = this.props;
-        return (
-            <App title="Forums JS">
-                <Title />
-                <Component {...pageProps} />
-            </App>
-        )
-    }
+    return {
+        props: {
+            session: session
+        }
+    };
+};
+
+function MyApp({ Component, pageProps }: any) {
+    return (
+        <Provider session={pageProps.session}>
+            <SessionAppWrapper Component={Component} pageProps={pageProps} />
+        </Provider>
+    );
 }
 
 export default MyApp;
