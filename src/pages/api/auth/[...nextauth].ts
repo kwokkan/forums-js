@@ -5,6 +5,7 @@ import { getOrCreateAuthUser } from "../../../services/userService";
 import { logDebug } from "../../../utils/logging";
 
 const options: IProviderOptions = {
+    debug: true,
     providers: [
         Providers.GitHub({
             clientId: process.env.AUTH_GITHUB_ID!,
