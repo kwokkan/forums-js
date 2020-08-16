@@ -1,9 +1,12 @@
+import { signOut } from "next-auth/client";
 import Link from "next/link";
 import React from "react";
 import { Icon, Nav, Navbar } from "rsuite";
+import { IUser } from "../types/IUser";
 
 interface IProps {
     title: string;
+    user?: IUser;
 }
 
 export function Navigation(props: IProps) {
@@ -40,7 +43,19 @@ export function Navigation(props: IProps) {
                     <Nav.Item icon={<Icon icon="github" />} href="https://github.com/kwokkan/forums-js" target="_blank" rel="noreferrer noopener">
                         Fork me
                     </Nav.Item>
-                    <Nav.Item icon={<Icon icon="cog" />}>Settings</Nav.Item>
+
+                    {props.user ?
+                        <>
+                            <Link href="/settings" passHref>
+                                <Nav.Item icon={<Icon icon="cog" />}>Settings</Nav.Item>
+                            </Link>
+                            <Nav.Item icon={<Icon icon="cog" />} onSelect={signOut}>Logout</Nav.Item>
+                        </>
+                        :
+                        <Link href="/api/auth/signin" passHref>
+                            <Nav.Item icon={<Icon icon="cog" />}>Login</Nav.Item>
+                        </Link>
+                    }
                 </Nav>
             </Navbar.Body>
         </Navbar>

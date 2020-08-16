@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders with user 1`] = `
+<div>
+  Logged in
+</div>
+`;
+
+exports[`Renders without user 1`] = `
+<div>
+  Not logged in
+</div>
+`;

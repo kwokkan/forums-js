@@ -156,7 +156,191 @@ exports[`Renders with title 1`] = `
         >
           <a
             className="rs-nav-item-content"
+            href="/api/auth/signin"
             onClick={[Function]}
+            onMouseEnter={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <i
+              className="rs-icon rs-icon-cog"
+            />
+            Login
+            <span
+              className="rs-ripple-pond"
+            >
+              <span
+                className="rs-ripple"
+                style={Object {}}
+              />
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Renders with user 1`] = `
+<div
+  className="rs-navbar rs-navbar-default"
+  role="navigation"
+>
+  <div
+    className="rs-navbar-header"
+  >
+    <a
+      className="navbar-brand logo"
+      href="/"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      <img
+        alt="Logo"
+        className="mr-3"
+        height="24"
+        src="/logo.png"
+        title="Test app"
+        width="24"
+      />
+      Test app
+    </a>
+  </div>
+  <div
+    className="rs-navbar-body"
+  >
+    <div
+      className="rs-nav rs-nav-default rs-navbar-nav rs-nav-horizontal"
+    >
+      <ul>
+        <li
+          className="rs-nav-item"
+        >
+          <a
+            className="rs-nav-item-content"
+            href="/"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <i
+              className="rs-icon rs-icon-home"
+            />
+            Home
+            <span
+              className="rs-ripple-pond"
+            >
+              <span
+                className="rs-ripple"
+                style={Object {}}
+              />
+            </span>
+          </a>
+        </li>
+        <li
+          className="rs-nav-item"
+        >
+          <a
+            className="rs-nav-item-content"
+            onClick={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            Forums
+            <span
+              className="rs-ripple-pond"
+            >
+              <span
+                className="rs-ripple"
+                style={Object {}}
+              />
+            </span>
+          </a>
+        </li>
+        <li
+          className="rs-nav-item"
+        >
+          <a
+            className="rs-nav-item-content"
+            onClick={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            New Posts
+            <span
+              className="rs-ripple-pond"
+            >
+              <span
+                className="rs-ripple"
+                style={Object {}}
+              />
+            </span>
+          </a>
+        </li>
+        <li
+          className="rs-nav-item"
+        >
+          <a
+            className="rs-nav-item-content"
+            href="/about"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            About
+            <span
+              className="rs-ripple-pond"
+            >
+              <span
+                className="rs-ripple"
+                style={Object {}}
+              />
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <div
+      className="rs-nav rs-nav-default rs-navbar-nav rs-navbar-right rs-nav-horizontal"
+    >
+      <ul>
+        <li
+          className="rs-nav-item"
+        >
+          <a
+            className="rs-nav-item-content"
+            href="https://github.com/kwokkan/forums-js"
+            onClick={[Function]}
+            rel="noreferrer noopener"
+            role="button"
+            tabIndex={0}
+            target="_blank"
+          >
+            <i
+              className="rs-icon rs-icon-github"
+            />
+            Fork me
+            <span
+              className="rs-ripple-pond"
+            >
+              <span
+                className="rs-ripple"
+                style={Object {}}
+              />
+            </span>
+          </a>
+        </li>
+        <li
+          className="rs-nav-item"
+        >
+          <a
+            className="rs-nav-item-content"
+            href="/settings"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
             role="button"
             tabIndex={0}
           >
@@ -164,6 +348,29 @@ exports[`Renders with title 1`] = `
               className="rs-icon rs-icon-cog"
             />
             Settings
+            <span
+              className="rs-ripple-pond"
+            >
+              <span
+                className="rs-ripple"
+                style={Object {}}
+              />
+            </span>
+          </a>
+        </li>
+        <li
+          className="rs-nav-item"
+        >
+          <a
+            className="rs-nav-item-content"
+            onClick={[Function]}
+            role="button"
+            tabIndex={0}
+          >
+            <i
+              className="rs-icon rs-icon-cog"
+            />
+            Logout
             <span
               className="rs-ripple-pond"
             >
