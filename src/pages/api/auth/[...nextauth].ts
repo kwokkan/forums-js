@@ -12,6 +12,11 @@ const options: IProviderOptions = {
             scope: []
         }),
     ],
+    events: {
+        error: (message) => {
+            console.error(message);
+        }
+    },
     pages: {
         signIn:"/auth/signin"
     },
