@@ -23,6 +23,7 @@ declare module "next-auth" {
     export interface IProviderOptions {
         providers: any[];
         callbacks?: IProviderOptionsCallback;
+        events?: INextEventsOptions;
         pages?: INextPageOptions;
     }
 
@@ -31,6 +32,15 @@ declare module "next-auth" {
         redirect?: (url: string, baseUrl: string) => Promise<string>;
         session?: (session: INextSession, user: INextUser, sessionToken: string) => Promise<INextSession>;
         jwt?: (token: INextToken, user: INextUser, account: INextAccount, profile: INextProfile, isNewUser: boolean) => Promise<INextToken>;
+    }
+
+    interface INextEventsOptions {
+        signIn?: (message: any) => Promise;
+        signOut?: (message: any) => Promise;
+        createUser?: (message: any) => Promise;
+        linkAccount?: (message: any) => Promise;
+        session?: (message: any) => Promise;
+        error?: (message: any) => Promise;
     }
 
     interface INextPageOptions {
