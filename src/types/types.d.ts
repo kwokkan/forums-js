@@ -25,6 +25,7 @@ declare module "next-auth" {
         callbacks?: IProviderOptionsCallback;
         events?: INextEventsOptions;
         pages?: INextPageOptions;
+        debug?: boolean;
     }
 
     interface IProviderOptionsCallback {
