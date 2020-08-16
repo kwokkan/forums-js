@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders without error 1`] = `
+<div
+  className="rs-panel rs-panel-default"
+>
+  <div
+    className="rs-panel-heading"
+    onClick={[Function]}
+    role="rowheader"
+    tabIndex={-1}
+  >
+    <h3
+      className="rs-panel-title"
+    >
+      <i
+        className="mr-3 rs-icon rs-icon-github rs-icon-size-2x"
+      />
+      GitHub
+    </h3>
+  </div>
+  <div
+    className="rs-panel-body"
+  >
+    <div
+      className="rs-content"
+    >
+      <button
+        className="rs-btn rs-btn-primary"
+        onClick={[Function]}
+        type="button"
+      >
+        Sign in with 
+        GitHub
+        <span
+          className="rs-ripple-pond"
+        >
+          <span
+            className="rs-ripple"
+            style={Object {}}
+          />
+        </span>
+      </button>
+    </div>
+  </div>
+</div>
+`;

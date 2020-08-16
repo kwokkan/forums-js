@@ -12,6 +12,9 @@ const options: IProviderOptions = {
             scope: []
         }),
     ],
+    pages: {
+        signIn:"/auth/signin"
+    },
     callbacks: {
         //signIn: (user, account, profile) => {
         //    console.debug("[callbacks:signIn]", user, account, profile);

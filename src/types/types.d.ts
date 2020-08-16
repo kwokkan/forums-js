@@ -9,6 +9,11 @@ interface INextSession extends any {
     forumsUser?: IForumSessionUser;
 }
 
+interface INextProvider extends any {
+    id: string;
+    name: string;
+}
+
 declare module "next-auth" {
     interface INextAccount extends any {
         provider: string;
@@ -16,8 +21,9 @@ declare module "next-auth" {
     }
 
     export interface IProviderOptions {
-        providers: any[],
-        callbacks?: IProviderOptionsCallback
+        providers: any[];
+        callbacks?: IProviderOptionsCallback;
+        pages?: INextPageOptions;
     }
 
     interface IProviderOptionsCallback {
@@ -27,8 +33,17 @@ declare module "next-auth" {
         jwt?: (token: INextToken, user: INextUser, account: INextAccount, profile: INextProfile, isNewUser: boolean) => Promise<INextToken>;
     }
 
+    interface INextPageOptions {
+        signIn?: string;
+        signOut?: string;
+        error?: string;
+        verifyRequest?: string;
+        newUser?: string;
+    }
+
     interface INextProfile extends any {
     }
+
 
     interface INextToken extends any {
         forumsUser?: IForumSessionUser;
@@ -47,9 +62,11 @@ declare module "next-auth" {
 declare module "next-auth/client" {
     export const Provider: any;
 
-    export function getSession<T>(context: GetServerSidePropsContext<T>): Promise<INextClientSession>;
+    export function getSession<T>(context: GetServerSidePropsContext<T>): Promise<INextSession>;
 
-    export function signIn(): void;
+    export function providers<T>(context: GetServerSidePropsContext<T>): Promise<INextProvider[]>;
+
+    export function signIn(provider?: string, args?: { callbackUrl?: string }): void;
 
     export function signOut(): void;
 
