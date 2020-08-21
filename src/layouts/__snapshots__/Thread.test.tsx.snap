@@ -63,6 +63,107 @@ exports[`Renders with messages 1`] = `
 </div>
 `;
 
+exports[`Renders with new comment box 1`] = `
+<div
+  className="rs-panel rs-panel-default"
+>
+  <div
+    className="rs-panel-heading"
+    onClick={[Function]}
+    role="rowheader"
+    tabIndex={-1}
+  >
+    <h3
+      className="rs-panel-title"
+    >
+      Test thread
+    </h3>
+  </div>
+  <div
+    className="rs-panel-body"
+  >
+    <div
+      className="rs-panel-group"
+    >
+      <div
+        className="rs-panel rs-panel-default"
+      >
+        <div
+          className="rs-panel-body"
+        >
+          <div
+            className="rs-content"
+          >
+            <div
+              className="rs-flex-box-grid rs-flex-box-grid-top rs-flex-box-grid-start"
+            >
+              <div
+                className="rs-flex-box-grid-item rs-flex-box-grid-item-0"
+              >
+                <div
+                  className="rs-avatar mr-3 rs-avatar-lg"
+                  title="Test user"
+                >
+                  Tu
+                </div>
+              </div>
+              <div
+                className="rs-flex-box-grid-item rs-flex-box-grid-item-0"
+              >
+                <p>
+                  2020-03-02T00:00:00.000Z
+                </p>
+                <p>
+                  First !!!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        className="rs-panel rs-panel-default"
+      >
+        <div
+          className="rs-panel-body"
+        >
+          <textarea
+            className="rs-input mb-3"
+            id={null}
+            onChange={[Function]}
+            onKeyDown={[Function]}
+            placeholder="Enter comment ..."
+            rows={10}
+            style={
+              Object {
+                "resize": "both",
+              }
+            }
+            type="text"
+            value=""
+          />
+          <button
+            className="rs-btn rs-btn-primary"
+            onClick={[Function]}
+            type="button"
+          >
+            Submit
+            <span
+              className="rs-ripple-pond"
+            >
+              <span
+                className="rs-ripple"
+                style={Object {}}
+              />
+            </span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Renders with no messages 1`] = `
 <div
   className="rs-panel rs-panel-default"

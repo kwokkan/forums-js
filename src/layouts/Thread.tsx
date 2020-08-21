@@ -1,14 +1,19 @@
-import React from "react";
-import { Avatar, Content, FlexboxGrid, Panel, PanelGroup } from "rsuite";
+import React, { useState } from "react";
+import { Avatar, Button, Content, FlexboxGrid, Input, Panel, PanelGroup } from "rsuite";
 import { IThread } from "../types/IThread";
+import { IUser } from "../types/IUser";
 import { formatDate } from "../utils/dateUtils";
 import { acronym } from "../utils/stringUtils";
 
 export interface IProps {
     thread: IThread;
+    user?: IUser;
+    onNewComment?: (comment: string) => void;
 }
 
 export function Thread(props: IProps) {
+    const [comment, setComment] = useState<string>("");
+
     const thread = props.thread;
 
     return (
@@ -30,6 +35,22 @@ export function Thread(props: IProps) {
                         </Content>
                     </Panel>
                 )}
+
+                {props.user &&
+                    <Panel>
+                        <Input
+                            componentClass="textarea"
+                            className="mb-3"
+                            rows={10}
+                            placeholder="Enter comment ..."
+                            style={{ resize: "both" }}
+                            value={comment}
+                            onChange={setComment}
+                        />
+
+                        <Button appearance="primary" onClick={() => props.onNewComment?.(comment)}>Submit</Button>
+                    </Panel>
+                }
             </PanelGroup>
         </Panel>
     );
