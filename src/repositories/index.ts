@@ -1,8 +1,9 @@
 import { getForumById, getForums } from "./postgresql/forumRepository";
-import { getMessagesByThreadId } from "./postgresql/messageRepository";
+import { addMessage, getMessagesByThreadId } from "./postgresql/messageRepository";
 import { getThreadById, getThreadsByForumId } from "./postgresql/threadRepository";
 import { createUser, getUserByAuth, getUserById, getUsers } from "./postgresql/userRepository";
 
+export { addMessage };
 export { createUser };
 export { getForumById };
 export { getForums };
