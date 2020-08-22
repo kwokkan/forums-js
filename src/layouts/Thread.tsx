@@ -8,7 +8,7 @@ import { acronym } from "../utils/stringUtils";
 export interface IProps {
     thread: IThread;
     user?: IUser;
-    onNewComment?: (comment: string) => void;
+    onNewComment?: (id: number, comment: string) => void;
 }
 
 export function Thread(props: IProps) {
@@ -48,7 +48,7 @@ export function Thread(props: IProps) {
                             onChange={setComment}
                         />
 
-                        <Button appearance="primary" onClick={() => props.onNewComment?.(comment)}>Submit</Button>
+                        <Button appearance="primary" onClick={() => props.onNewComment?.(props.thread.id, comment)}>Submit</Button>
                     </Panel>
                 }
             </PanelGroup>

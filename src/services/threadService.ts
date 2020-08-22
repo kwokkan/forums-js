@@ -1,5 +1,29 @@
+import { IMessage } from "../types/IMessage";
 import { IThread } from "../types/IThread";
+import { logDebug } from "../utils/logging";
 import * as repo from "./../repositories";
+
+export async function addMessage(id: number | undefined, userId: number, message: string): Promise<IMessage | undefined> {
+    logDebug("addMessage", id, userId, message);
+
+    if (id === undefined) {
+        return;
+    }
+
+    const thread = await repo.getThreadById(id);
+
+    if (!thread) {
+        throw new Error(`Thread ${id} does not exist.`);
+    }
+
+    const created = await repo.addMessage(id, userId, message);
+
+    if (!created) {
+        throw new Error(`Failed to add message.`);
+    }
+
+    return created;
+}
 
 export async function getThreadById(id?: number): Promise<IThread | undefined> {
     if (id === undefined) {

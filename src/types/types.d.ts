@@ -73,7 +73,7 @@ declare module "next-auth" {
 declare module "next-auth/client" {
     export const Provider: any;
 
-    export function getSession<T>(context: GetServerSidePropsContext<T>): Promise<INextSession>;
+    export function getSession(context: { req: IncomingMessage }): Promise<INextSession>;
 
     export function providers<T>(context: GetServerSidePropsContext<T>): Promise<INextProvider[]>;
 
