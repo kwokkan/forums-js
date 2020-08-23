@@ -7,8 +7,6 @@ export function ThreadManager(props: IProps) {
     const [thread, setThread] = useState<IThread>(props.thread);
 
     const onThreadNewMessage = async (id: number, comment: string) => {
-        console.log(id, comment);
-
         const created = await addMessage(id, comment);
 
         setThread({
