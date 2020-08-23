@@ -8,13 +8,19 @@ import { acronym } from "../utils/stringUtils";
 export interface IProps {
     thread: IThread;
     user?: IUser;
-    onNewComment?: (id: number, comment: string) => void;
+    onNewMessage?: (id: number, message: string) => Promise<void>;
 }
 
 export function Thread(props: IProps) {
-    const [comment, setComment] = useState<string>("");
+    const [message, setMessage] = useState<string>("");
 
     const thread = props.thread;
+
+    const onNewMessage = async () => {
+        await props.onNewMessage?.(props.thread.id, message);
+
+        setMessage("");
+    };
 
     return (
         <Panel header={<h3>{thread.name}</h3>}>
@@ -42,13 +48,13 @@ export function Thread(props: IProps) {
                             componentClass="textarea"
                             className="mb-3"
                             rows={10}
-                            placeholder="Enter comment ..."
+                            placeholder="Enter message..."
                             style={{ resize: "both" }}
-                            value={comment}
-                            onChange={setComment}
+                            value={message}
+                            onChange={setMessage}
                         />
 
-                        <Button appearance="primary" onClick={() => props.onNewComment?.(props.thread.id, comment)}>Submit</Button>
+                        <Button appearance="primary" onClick={onNewMessage}>Submit</Button>
                     </Panel>
                 }
             </PanelGroup>

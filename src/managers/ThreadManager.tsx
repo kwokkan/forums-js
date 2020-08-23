@@ -6,7 +6,7 @@ import { IThread } from "../types/IThread";
 export function ThreadManager(props: IProps) {
     const [thread, setThread] = useState<IThread>(props.thread);
 
-    const onThreadNewComment = async (id: number, comment: string) => {
+    const onThreadNewMessage = async (id: number, comment: string) => {
         console.log(id, comment);
 
         const created = await addMessage(id, comment);
@@ -21,6 +21,6 @@ export function ThreadManager(props: IProps) {
     };
 
     return (
-        <Thread thread={thread} user={props.user} onNewComment={onThreadNewComment} />
+        <Thread thread={thread} user={props.user} onNewMessage={onThreadNewMessage} />
     );
 }
