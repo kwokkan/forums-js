@@ -22,6 +22,9 @@ export async function addMessage(id: number | undefined, userId: number, message
         throw new Error(`Failed to add message.`);
     }
 
+    const user = await repo.getUserById(created.user.id);
+    created.user = user!;
+
     return created;
 }
 

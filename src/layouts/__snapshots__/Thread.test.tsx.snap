@@ -63,7 +63,7 @@ exports[`Renders with messages 1`] = `
 </div>
 `;
 
-exports[`Renders with new comment box 1`] = `
+exports[`Renders with new message box 1`] = `
 <div
   className="rs-panel rs-panel-default"
 >
@@ -132,7 +132,7 @@ exports[`Renders with new comment box 1`] = `
             id={null}
             onChange={[Function]}
             onKeyDown={[Function]}
-            placeholder="Enter comment ..."
+            placeholder="Enter message..."
             rows={10}
             style={
               Object {

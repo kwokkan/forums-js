@@ -1,7 +1,7 @@
 import { IMessage } from "../../types/IMessage";
 import { runQuery } from "./common";
 
-interface IMessageTable {
+export interface IMessageTable {
     message_pk: number;
     created: Date;
     content: string;
