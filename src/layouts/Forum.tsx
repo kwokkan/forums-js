@@ -1,19 +1,19 @@
 import Link from "next/link";
 import React, { Fragment } from "react";
-import { Content, Panel, PanelGroup, Table } from "rsuite";
+import { Button, Content, Panel, PanelGroup, Table } from "rsuite";
 import { IForum } from "../types/IForum";
 import { IThread } from "../types/IThread";
+import { IUser } from "../types/IUser";
 import { formatDate } from "../utils/dateUtils";
 
 const { Column, HeaderCell, Cell, Pagination } = Table;
 
 export interface IProps {
     forum: IForum;
+    user?: IUser;
 }
 
-export function Forum(props: IProps) {
-    const forum = props.forum;
-
+export function Forum({ forum, user }: IProps) {
     return (
         <Panel header={<h3>{forum.name}</h3>}>
             <Content>
@@ -25,6 +25,18 @@ export function Forum(props: IProps) {
 
                         <hr />
                     </Fragment>
+                }
+
+                {user &&
+                    <PanelGroup>
+                        <Link href="/threads/new" as="/threads/new">
+                            <a>
+                                <Button appearance="primary">
+                                    New Thread
+                                </Button>
+                            </a>
+                        </Link>
+                    </PanelGroup>
                 }
 
                 {forum.threads &&

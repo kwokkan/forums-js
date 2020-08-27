@@ -31,6 +31,61 @@ exports[`Renders with description 1`] = `
 </div>
 `;
 
+exports[`Renders with new thread button 1`] = `
+<div
+  className="rs-panel rs-panel-default"
+>
+  <div
+    className="rs-panel-heading"
+    onClick={[Function]}
+    role="rowheader"
+    tabIndex={-1}
+  >
+    <h3
+      className="rs-panel-title"
+    >
+      First forum
+    </h3>
+  </div>
+  <div
+    className="rs-panel-body"
+  >
+    <div
+      className="rs-content"
+    >
+      <p>
+        Forum description.
+      </p>
+      <hr />
+      <div
+        className="rs-panel-group"
+      >
+        <a
+          href="/threads/new"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          <button
+            className="rs-btn rs-btn-primary"
+            type="button"
+          >
+            New Thread
+            <span
+              className="rs-ripple-pond"
+            >
+              <span
+                className="rs-ripple"
+                style={Object {}}
+              />
+            </span>
+          </button>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
 exports[`Renders with nothing 1`] = `
 <div
   className="rs-panel rs-panel-default"

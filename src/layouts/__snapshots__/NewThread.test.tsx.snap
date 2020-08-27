@@ -1,0 +1,103 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders without error 1`] = `
+<div
+  className="rs-panel rs-panel-default"
+>
+  <div
+    className="rs-panel-heading"
+    onClick={[Function]}
+    role="rowheader"
+    tabIndex={-1}
+  >
+    <h3
+      className="rs-panel-title"
+    >
+      New thread
+    </h3>
+  </div>
+  <div
+    className="rs-panel-body"
+  >
+    <div
+      className="rs-panel-group"
+    >
+      <div
+        className="rs-content"
+      >
+        <form
+          className="rs-form rs-form-vertical rs-form-fluid"
+          onSubmit={[Function]}
+        >
+          <div
+            className="rs-form-group"
+            role="group"
+          >
+            <label
+              className="rs-control-label"
+              htmlFor="title"
+            >
+              Title
+            </label>
+            <div
+              className="rs-form-control-wrapper"
+            >
+              <input
+                className="rs-input"
+                id="title"
+                name="title"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onKeyDown={[Function]}
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+          <div
+            className="rs-form-group"
+            role="group"
+          >
+            <label
+              className="rs-control-label"
+              htmlFor="message"
+            >
+              Message
+            </label>
+            <div
+              className="rs-form-control-wrapper"
+            >
+              <textarea
+                className="rs-input mb-3"
+                id="message"
+                name="message"
+                onBlur={[Function]}
+                onChange={[Function]}
+                onKeyDown={[Function]}
+                rows={10}
+                type="text"
+                value=""
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <button
+      className="rs-btn rs-btn-primary"
+      onClick={[Function]}
+      type="button"
+    >
+      Submit
+      <span
+        className="rs-ripple-pond"
+      >
+        <span
+          className="rs-ripple"
+          style={Object {}}
+        />
+      </span>
+    </button>
+  </div>
+</div>
+`;
