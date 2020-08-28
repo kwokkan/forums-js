@@ -29,7 +29,7 @@ export function Forum({ forum, user }: IProps) {
 
                 {user &&
                     <PanelGroup>
-                        <Link href="/threads/new" as="/threads/new">
+                        <Link href="/forums/[id]/new" as={`/forums/${forum.id}/new`}>
                             <a>
                                 <Button appearance="primary">
                                     New Thread

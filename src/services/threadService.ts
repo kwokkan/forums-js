@@ -28,6 +28,38 @@ export async function addMessage(id: number | undefined, userId: number, message
     return created;
 }
 
+export async function addThread(forumId: number | undefined, userId: number, title: string, message: string): Promise<IThread | undefined> {
+    logDebug("addThread", forumId, userId, title, message);
+
+    if (forumId === undefined) {
+        return;
+    }
+
+    const forum = await repo.getForumById(forumId);
+
+    if (!forum) {
+        throw new Error(`Forum ${forumId} does not exist.`);
+    }
+
+    const thread = await repo.addThread({
+        forumId: forumId,
+        name: title,
+        userId: userId
+    });
+
+    if (!thread) {
+        throw new Error(`Failed to add thread.`);
+    }
+
+    const createdMessage = await repo.addMessage(thread.id, userId, message);
+
+    if (!createdMessage) {
+        throw new Error(`Failed to add message.`);
+    }
+
+    return thread;
+}
+
 export async function getThreadById(id?: number): Promise<IThread | undefined> {
     if (id === undefined) {
         return;
