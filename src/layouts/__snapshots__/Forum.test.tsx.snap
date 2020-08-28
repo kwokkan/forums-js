@@ -61,7 +61,7 @@ exports[`Renders with new thread button 1`] = `
         className="rs-panel-group"
       >
         <a
-          href="/threads/new"
+          href="/forums/1/new"
           onClick={[Function]}
           onMouseEnter={[Function]}
         >
