@@ -2,14 +2,15 @@ import { IncomingMessage, ServerResponse } from "http";
 import NextAuth, { IProviderOptions } from "next-auth";
 import Providers from "next-auth/providers";
 import { getOrCreateAuthUser } from "../../../services/userService";
+import { authConfig } from "../../../utils/config";
 import { logDebug, logError } from "../../../utils/logging";
 
 const options: IProviderOptions = {
     debug: true,
     providers: [
         Providers.GitHub({
-            clientId: process.env.AUTH_GITHUB_ID!,
-            clientSecret: process.env.AUTH_GITHUB_SECRET,
+            clientId: authConfig.github.id!,
+            clientSecret: authConfig.github.secret,
             scope: []
         }),
     ],

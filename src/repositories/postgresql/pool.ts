@@ -1,14 +1,13 @@
 import { Pool } from "pg";
-
-const env = process.env;
+import { dbConfig } from "../../utils/config";
 
 export const pool = new Pool({
-    host: env.DB_HOST,
-    database: env.DB_DATABASE,
-    user: env.DB_USERNAME,
-    password: env.DB_PASSWORD,
+    host: dbConfig.host,
+    database: dbConfig.database,
+    user: dbConfig.username,
+    password: dbConfig.password,
     application_name: "forums-js",
-    ssl: env.DB_SSL === "true" ? {
+    ssl: dbConfig.ssl ? {
         rejectUnauthorized: false
     } : undefined
 });
