@@ -1,5 +1,6 @@
 import { IMessage } from "../types/IMessage";
 import { IThread } from "../types/IThread";
+import { jsonPost } from "./common";
 
 interface IAddThreadModel {
     forumId: number;
@@ -8,13 +9,7 @@ interface IAddThreadModel {
 }
 
 export async function addMessage(id: number, message: string): Promise<IMessage> {
-    const response = await fetch("/api/threads/" + id, {
-        headers: {
-            "Content-Type": "application/json"
-        },
-        method: "POST",
-        body: JSON.stringify({ message })
-    });
+    const response = await jsonPost("/api/threads/" + id, { message });
 
     if (!response.ok) {
         throw new Error("Failed to add message: " + response.statusText);
@@ -24,13 +19,7 @@ export async function addMessage(id: number, message: string): Promise<IMessage>
 }
 
 export async function addThread({ forumId, title, message }: IAddThreadModel): Promise<IThread> {
-    const response = await fetch("/api/forums/" + forumId, {
-        headers: {
-            "Content-Type": "application/json"
-        },
-        method: "POST",
-        body: JSON.stringify({ forumId, title, message })
-    });
+    const response = await jsonPost("/api/forums/" + forumId, { forumId, title, message });
 
     if (!response.ok) {
         throw new Error("Failed to add thread: " + response.statusText);
