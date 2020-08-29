@@ -4,7 +4,7 @@ import { addMessage } from "../../../services/threadService";
 import { logDebug } from "../../../utils/logging";
 import { parseIntParam } from "../../../utils/paramUtil";
 
-export default async (req: NextApiRequest, res: NextApiResponse) => {
+async function handler(req: NextApiRequest, res: NextApiResponse) {
     logDebug("api/threads/[id]", req, res);
 
     if (req.method !== "POST") {
@@ -22,3 +22,5 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
 
     return res.status(201).json(created);
 }
+
+export default handler;
