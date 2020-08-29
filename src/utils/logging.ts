@@ -13,13 +13,13 @@ enum LogLevel {
 }
 
 export function logDebug(...args: any[]) {
-    if (logLevel >= LogLevel.Debug) {
+    if (LogLevel.Debug >= logLevel) {
         console.debug(...args);
     }
 }
 
 export function logError(...args: any[]) {
-    if (logLevel >= LogLevel.Error) {
+    if (LogLevel.Error >= logLevel) {
         console.error(...args);
     }
 }
