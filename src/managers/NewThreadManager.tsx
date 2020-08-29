@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { addThread } from "../api/threadApi";
+import { addThread } from "../api";
 import { NewThread } from "../layouts/NewThread";
 
 export interface IProps {

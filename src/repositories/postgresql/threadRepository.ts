@@ -1,7 +1,7 @@
 import { IThread } from "../../types/IThread";
 import { runQuery } from "./common";
 
-interface IThreadTable {
+export interface IThreadTable {
     thread_pk: number;
     created: Date;
     name: string;

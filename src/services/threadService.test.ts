@@ -1,6 +1,7 @@
+import { IForum } from "../types/IForum";
+import { IMessage } from "../types/IMessage";
 import { IThread } from "../types/IThread";
 import { IUser } from "../types/IUser";
-import { IMessage } from "../types/IMessage";
 
 beforeEach(() => {
     jest.resetModules();
@@ -115,5 +116,153 @@ describe("addMessage", () => {
         expect(mockGetThreadById).toBeCalledWith(1);
         expect(mockAddMessage).toBeCalledWith(1, 2, "New message");
         expect(mockGetUserById).toBeCalledWith(2);
+    });
+});
+
+describe("addThread", () => {
+    test("undefined forumId - returns undefined", async () => {
+        const { addThread } = await import("./threadService");
+
+        const result = await addThread(undefined, 1, "New title", "New message");
+
+        expect(result).toBeUndefined();
+    });
+
+    test("Invalid forum - throws error", async (donecallback) => {
+        const mockGetForumById = jest.fn(() => undefined);
+
+        jest.doMock("../repositories", () => {
+            return {
+                __esModule: true,
+                getForumById: mockGetForumById
+            };
+        });
+
+        const { addThread } = await import("./threadService");
+
+        const result = async () => await addThread(10, 1, "New title", "New message");
+
+        expect(result).rejects.toThrowError("Forum 10 does not exist.");
+
+        setImmediate(() => {
+            expect(mockGetForumById).toBeCalledWith(10);
+
+            donecallback();
+        });
+    });
+
+    test("Add thread error - throws error", async (donecallback) => {
+        const mockGetForumById = jest.fn((): IForum => ({
+            created: 1,
+            id: 10,
+            name: "Test forum"
+        }));
+        const mockAddThread = jest.fn(() => undefined);
+
+        jest.doMock("../repositories", () => {
+            return {
+                __esModule: true,
+                addThread: mockAddThread,
+                getForumById: mockGetForumById
+            };
+        });
+
+        const { addThread } = await import("./threadService");
+
+        const result = async () => await addThread(10, 1, "New title", "New message");
+
+        expect(result).rejects.toThrowError("Failed to add thread.");
+
+        setImmediate(() => {
+            expect(mockGetForumById).toBeCalledWith(10);
+            expect(mockAddThread).toBeCalledWith({ forumId: 10, name: "New title", userId: 1 });
+
+            donecallback();
+        });
+    });
+
+    test("Add message error - throws error", async (donecallback) => {
+        const mockGetForumById = jest.fn((): IForum => ({
+            created: 1,
+            id: 10,
+            name: "Test forum"
+        }));
+        const mockAddThread = jest.fn((): IThread => ({
+            created: 1,
+            id: 30,
+            name: "New title",
+            messages: []
+        }));
+        const mockAddMessage = jest.fn(() => undefined);
+
+        jest.doMock("../repositories", () => {
+            return {
+                __esModule: true,
+                addMessage: mockAddMessage,
+                addThread: mockAddThread,
+                getForumById: mockGetForumById
+            };
+        });
+
+        const { addThread } = await import("./threadService");
+
+        const result = async () => await addThread(10, 1, "New title", "New message");
+
+        expect(result).rejects.toThrowError("Failed to add message.");
+
+        setImmediate(() => {
+            expect(mockGetForumById).toBeCalledWith(10);
+            expect(mockAddThread).toBeCalledWith({ forumId: 10, name: "New title", userId: 1 });
+            expect(mockAddMessage).toBeCalledWith(30, 1, "New message");
+
+            donecallback();
+        });
+    });
+
+    test("Add thread - success", async (donecallback) => {
+        const mockGetForumById = jest.fn((): IForum => ({
+            created: 1,
+            id: 10,
+            name: "Test forum"
+        }));
+        const mockAddThread = jest.fn((): IThread => ({
+            created: 1,
+            id: 30,
+            name: "New title",
+            messages: []
+        }));
+        const mockAddMessage = jest.fn((): IMessage => ({
+            content: "New message",
+            created: 1,
+            id: 40,
+            user: {
+                id: 1,
+                joinedDate: 1,
+                name: "1"
+            }
+        }));
+
+        jest.doMock("../repositories", () => {
+            return {
+                __esModule: true,
+                addMessage: mockAddMessage,
+                addThread: mockAddThread,
+                getForumById: mockGetForumById
+            };
+        });
+
+        const { addThread } = await import("./threadService");
+
+        const result = await addThread(10, 1, "New title", "New message");
+
+        expect(result!.id).toBe(30);
+
+        setImmediate(() => {
+            expect(mockGetForumById).toBeCalledWith(10);
+            expect(mockAddThread).toBeCalledWith({ forumId: 10, name: "New title", userId: 1 });
+            expect(mockAddMessage).toBeCalledWith(30, 1, "New message");
+
+            donecallback();
+        });
     });
 });
