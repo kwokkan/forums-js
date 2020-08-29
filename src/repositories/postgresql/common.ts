@@ -1,4 +1,4 @@
-import { logDebug } from "../../utils/logging";
+import { logDebug, logError } from "../../utils/logging";
 import { pool } from "./pool";
 
 export async function runQuery<TModel>(query: string, values?: any[]): Promise<TModel[]> {
@@ -10,7 +10,7 @@ export async function runQuery<TModel>(query: string, values?: any[]): Promise<T
         return result.rows;
     }
     catch (e) {
-        console.error(e);
+        logError(e);
 
         return [];
     }

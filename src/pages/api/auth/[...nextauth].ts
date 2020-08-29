@@ -2,7 +2,7 @@ import { IncomingMessage, ServerResponse } from "http";
 import NextAuth, { IProviderOptions } from "next-auth";
 import Providers from "next-auth/providers";
 import { getOrCreateAuthUser } from "../../../services/userService";
-import { logDebug } from "../../../utils/logging";
+import { logDebug, logError } from "../../../utils/logging";
 
 const options: IProviderOptions = {
     debug: true,
@@ -15,7 +15,7 @@ const options: IProviderOptions = {
     ],
     events: {
         error: (message) => {
-            console.error(message);
+            logError(message);
         }
     },
     pages: {
