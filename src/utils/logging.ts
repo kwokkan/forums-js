@@ -1,6 +1,7 @@
 import { parseIntParam } from "./paramUtil";
 
 const logLevel = parseIntParam(process.env.LOG_LEVEL) ?? 0;
+const throwOnError = process.env.LOG_THROW_ON_ERROR === "true";
 
 enum LogLevel {
     Trace = 0,
@@ -21,5 +22,9 @@ export function logDebug(...args: any[]) {
 export function logError(...args: any[]) {
     if (LogLevel.Error >= logLevel) {
         console.error(...args);
+
+        if (throwOnError) {
+            throw args;
+        }
     }
 }
