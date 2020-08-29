@@ -17,3 +17,9 @@ export function logDebug(...args: any[]) {
         console.debug(...args);
     }
 }
+
+export function logError(...args: any[]) {
+    if (logLevel >= LogLevel.Error) {
+        console.error(...args);
+    }
+}
