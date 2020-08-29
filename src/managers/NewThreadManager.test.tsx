@@ -2,6 +2,7 @@ import Enzyme, { mount } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 import { act } from "react-dom/test-utils";
 import { create } from "react-test-renderer";
+import { IThread } from "../types/IThread";
 
 beforeAll(() => {
     Enzyme.configure({ adapter: new Adapter() });
@@ -18,22 +19,37 @@ test("Renders without error", () => {
         expect(tree).toMatchSnapshot();
     });
 });
-/*
+
 test("onNewThread callback called", (doneCallback) => {
     jest.isolateModules(async () => {
-        const mockOnNewThread = jest.fn();
+        const mockAddThread = jest.fn((): IThread => ({
+            created: 1,
+            id: 20,
+            messages: [],
+            name: "New title"
+        }));
+        const mockPush = jest.fn();
 
         jest.doMock("../api", () => {
             return {
                 __esModule: true,
-                addMessage: mockOnNewThread
+                addThread: mockAddThread
+            };
+        });
+
+        jest.doMock("next/router", () => {
+            return {
+                __esModule: true,
+                useRouter: () => ({
+                    push: mockPush
+                })
             };
         });
 
         const { NewThreadManager } = await import("./NewThreadManager");
 
         let wrapper = mount(
-            <NewThreadManager />
+            <NewThreadManager forumId={10} />
         );
 
         act(() => {
@@ -46,10 +62,10 @@ test("onNewThread callback called", (doneCallback) => {
         });
 
         setImmediate(() => {
-            expect(mockOnNewThread).toBeCalledWith("New title", "New message");
+            expect(mockAddThread).toBeCalledWith({ forumId: 10, title: "New title", message: "New message" });
+            expect(mockPush).toBeCalledWith("/threads/[id]", "/threads/20");
 
             doneCallback();
         });
     });
 });
-*/
