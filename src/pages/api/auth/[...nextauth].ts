@@ -17,6 +17,15 @@ const options: IProviderOptions = {
     events: {
         error: async (message) => {
             await addLog("[events:error]", message);
+        },
+        session: async (message) => {
+            await addLog("[events:session]", message);
+        },
+        signIn: async (message) => {
+            await addLog("[events:signIn]", message);
+        },
+        signOut: async (message) => {
+            await addLog("[events:signOut]", message);
         }
     },
     pages: {
