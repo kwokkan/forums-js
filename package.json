@@ -18,6 +18,7 @@
     "next-auth": "3.1.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
+    "react-markdown": "4.3.1",
     "rsuite": "4.8.1"
   },
   "devDependencies": {
