@@ -4,6 +4,7 @@ import { IThread } from "../types/IThread";
 import { IUser } from "../types/IUser";
 import { formatDate } from "../utils/dateUtils";
 import { acronym } from "../utils/stringUtils";
+import { Markdown } from "./Markdown";
 
 export interface IProps {
     thread: IThread;
@@ -35,7 +36,7 @@ export function Thread(props: IProps) {
 
                                 <FlexboxGrid.Item>
                                     <p>{formatDate(x.created)}</p>
-                                    <p>{x.content}</p>
+                                    <Markdown content={x.content} />
                                 </FlexboxGrid.Item>
                             </FlexboxGrid>
                         </Content>

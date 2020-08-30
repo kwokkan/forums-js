@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders without errors 1`] = `
+Array [
+  <h1>
+    header
+  </h1>,
+  <h2>
+    sub header
+  </h2>,
+  "<script>alert(1)</script>",
+  <p>
+    &lt;b&gt;
+    bold
+    &lt;/b&gt;
+  </p>,
+  <p>
+    <a
+      href="http://localhost:3000"
+    >
+      my link
+    </a>
+  </p>,
+  <p>
+    normal content
+  </p>,
+]
+`;
