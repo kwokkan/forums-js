@@ -1,9 +1,9 @@
 import { IncomingMessage, ServerResponse } from "http";
 import NextAuth, { IProviderOptions } from "next-auth";
 import Providers from "next-auth/providers";
+import { addLog } from "../../../services/logService";
 import { getOrCreateAuthUser } from "../../../services/userService";
 import { authConfig } from "../../../utils/config";
-import { logDebug, logError } from "../../../utils/logging";
 
 const options: IProviderOptions = {
     debug: true,
@@ -15,44 +15,44 @@ const options: IProviderOptions = {
         }),
     ],
     events: {
-        error: (message) => {
-            logError(message);
+        error: async (message) => {
+            await addLog("[events:error]", message);
         }
     },
     pages: {
-        signIn:"/auth/signin"
+        signIn: "/auth/signin"
     },
     callbacks: {
-        //signIn: (user, account, profile) => {
-        //    console.debug("[callbacks:signIn]", user, account, profile);
+        signIn: async (user, account, profile) => {
+            await addLog("[callbacks:signIn]", user, account, profile);
 
-        //    return Promise.resolve(true);
-        //},
-        //redirect: (url, baseUrl) => {
-        //    console.debug("[callbacks:redirect]", url, baseUrl);
+            return true;
+        },
+        redirect: async (url, baseUrl) => {
+            await addLog("[callbacks:redirect]", url, baseUrl);
 
-        //    return Promise.resolve(url);
-        //},
+            return url;
+        },
         jwt: async (token, user, account, profile, isNewUser) => {
-            logDebug("[callbacks:jwt]", token, user, account, profile, isNewUser);
+            await addLog("[callbacks:jwt]", token, user, account, profile, isNewUser);
 
             if (account) {
-                logDebug("[callbacks:jwt]", "Creating session");
+                await addLog("[callbacks:jwt]", "Creating session");
                 const authUser = await getOrCreateAuthUser(account.provider, account.id, user.name);
 
                 token.forumsUser = authUser;
 
-                logDebug("[callbacks:jwt]", "Created session", token);
+                await addLog("[callbacks:jwt]", "Created session", token);
             }
 
             return token;
         },
-        session: (session, user, sessionToken) => {
-            logDebug("[callbacks:session]", session, user, sessionToken);
+        session: async (session, user, sessionToken) => {
+            await addLog("[callbacks:session]", session, user, sessionToken);
 
             session.forumsUser = user.forumsUser;
 
-            return Promise.resolve(session);
+            return session;
         }
     }
 };
