@@ -127,21 +127,74 @@ exports[`Renders with new message box 1`] = `
         <div
           className="rs-panel-body"
         >
-          <textarea
-            className="rs-input mb-3"
-            id={null}
-            onChange={[Function]}
-            onKeyDown={[Function]}
-            placeholder="Enter message..."
-            rows={10}
-            style={
-              Object {
-                "resize": "both",
+          <div
+            className="mb-3"
+          >
+            <div
+              className="rs-nav rs-nav-subtle rs-nav-horizontal"
+            >
+              <ul>
+                <li
+                  className="rs-nav-item preview-strip-1 rs-nav-item-active"
+                >
+                  <a
+                    className="rs-nav-item-content"
+                    onClick={[Function]}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    Text
+                    <span
+                      className="rs-ripple-pond"
+                    >
+                      <span
+                        className="rs-ripple"
+                        style={Object {}}
+                      />
+                    </span>
+                  </a>
+                </li>
+                <li
+                  className="rs-nav-item preview-strip-2"
+                >
+                  <a
+                    className="rs-nav-item-content"
+                    onClick={[Function]}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    Preview
+                    <span
+                      className="rs-ripple-pond"
+                    >
+                      <span
+                        className="rs-ripple"
+                        style={Object {}}
+                      />
+                    </span>
+                  </a>
+                </li>
+              </ul>
+              <div
+                className="rs-nav-waterline"
+              />
+            </div>
+            <textarea
+              className="rs-input"
+              id={null}
+              onChange={[Function]}
+              onKeyDown={[Function]}
+              placeholder="Enter message..."
+              rows={10}
+              style={
+                Object {
+                  "resize": "both",
+                }
               }
-            }
-            type="text"
-            value=""
-          />
+              type="text"
+              value=""
+            />
+          </div>
           <button
             className="rs-btn rs-btn-primary"
             onClick={[Function]}

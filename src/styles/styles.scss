@@ -19,3 +19,12 @@
 .mt-3 {
     margin-top: 1rem !important;
 }
+
+.markdown-preview {
+    min-height: 76px;
+    max-height: 200px;
+    overflow: auto;
+    border: 1px solid #e5e5ea;
+    border-radius: 6px;
+    padding: 7px 11px;
+}
