@@ -1,0 +1,139 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders without error - edit mode 1`] = `
+<div>
+  <div
+    className="rs-nav rs-nav-subtle rs-nav-horizontal"
+  >
+    <ul>
+      <li
+        className="rs-nav-item preview-strip-1 rs-nav-item-active"
+      >
+        <a
+          className="rs-nav-item-content"
+          onClick={[Function]}
+          role="button"
+          tabIndex={0}
+        >
+          Text
+          <span
+            className="rs-ripple-pond"
+          >
+            <span
+              className="rs-ripple"
+              style={Object {}}
+            />
+          </span>
+        </a>
+      </li>
+      <li
+        className="rs-nav-item preview-strip-2"
+      >
+        <a
+          className="rs-nav-item-content"
+          onClick={[Function]}
+          role="button"
+          tabIndex={0}
+        >
+          Preview
+          <span
+            className="rs-ripple-pond"
+          >
+            <span
+              className="rs-ripple"
+              style={Object {}}
+            />
+          </span>
+        </a>
+      </li>
+    </ul>
+    <div
+      className="rs-nav-waterline"
+    />
+  </div>
+  <textarea
+    className="rs-input"
+    id={null}
+    onChange={[Function]}
+    onKeyDown={[Function]}
+    style={
+      Object {
+        "resize": "both",
+      }
+    }
+    type="text"
+    value="# header"
+  />
+</div>
+`;
+
+exports[`Renders without error - preview mode 1`] = `
+"<MarkdownPreview content=\\"# header\\">
+  <div className={[undefined]}>
+    <defaultProps(Nav) activeKey={2} appearance=\\"subtle\\" onSelect={[Function: bound dispatchAction]} classPrefix=\\"rs-nav\\">
+      <Nav activeKey={2} appearance=\\"subtle\\" onSelect={[Function: bound dispatchAction]} classPrefix=\\"rs-nav\\">
+        <div className=\\"rs-nav rs-nav-subtle rs-nav-horizontal\\">
+          <ul>
+            <defaultProps(NavItem) eventKey={1} className=\\"preview-strip-1\\" tabIndex={0} componentClass={{...}} classPrefix=\\"rs-nav-item\\" onSelect={[Function: bound dispatchAction]} hasTooltip={false} active={false}>
+              <NavItem eventKey={1} className=\\"preview-strip-1\\" tabIndex={0} componentClass={{...}} classPrefix=\\"rs-nav-item\\" onSelect={[Function: bound dispatchAction]} hasTooltip={false} active={false}>
+                <li className=\\"rs-nav-item preview-strip-1\\" style={[undefined]}>
+                  <SafeAnchor disabled={[undefined]} role=\\"button\\" tabIndex={0} className=\\"rs-nav-item-content\\" onClick={[Function (anonymous)]}>
+                    <a role=\\"button\\" tabIndex={0} className=\\"rs-nav-item-content\\" onClick={[Function: handleClick]}>
+                      Text
+                      <defaultProps(Ripple) classPrefix=\\"rs-ripple\\">
+                        <Ripple classPrefix=\\"rs-ripple\\">
+                          <span className=\\"rs-ripple-pond\\">
+                            <Transition in={false} enteringClassName=\\"rs-ripple-rippling\\" onEntered={[Function (anonymous)]} timeout={1000}>
+                              <span className=\\"rs-ripple\\" style={{...}} />
+                            </Transition>
+                          </span>
+                        </Ripple>
+                      </defaultProps(Ripple)>
+                    </a>
+                  </SafeAnchor>
+                </li>
+              </NavItem>
+            </defaultProps(NavItem)>
+            <defaultProps(NavItem) eventKey={2} className=\\"preview-strip-2\\" tabIndex={0} componentClass={{...}} classPrefix=\\"rs-nav-item\\" onSelect={[Function: bound dispatchAction]} hasTooltip={false} active={true}>
+              <NavItem eventKey={2} className=\\"preview-strip-2\\" tabIndex={0} componentClass={{...}} classPrefix=\\"rs-nav-item\\" onSelect={[Function: bound dispatchAction]} hasTooltip={false} active={true}>
+                <li className=\\"rs-nav-item preview-strip-2 rs-nav-item-active\\" style={[undefined]}>
+                  <SafeAnchor disabled={[undefined]} role=\\"button\\" tabIndex={0} className=\\"rs-nav-item-content\\" onClick={[Function (anonymous)]}>
+                    <a role=\\"button\\" tabIndex={0} className=\\"rs-nav-item-content\\" onClick={[Function: handleClick]}>
+                      Preview
+                      <defaultProps(Ripple) classPrefix=\\"rs-ripple\\">
+                        <Ripple classPrefix=\\"rs-ripple\\">
+                          <span className=\\"rs-ripple-pond\\">
+                            <Transition in={false} enteringClassName=\\"rs-ripple-rippling\\" onEntered={[Function (anonymous)]} timeout={1000}>
+                              <span className=\\"rs-ripple\\" style={{...}} />
+                            </Transition>
+                          </span>
+                        </Ripple>
+                      </defaultProps(Ripple)>
+                    </a>
+                  </SafeAnchor>
+                </li>
+              </NavItem>
+            </defaultProps(NavItem)>
+          </ul>
+          <div className=\\"rs-nav-waterline\\" />
+        </div>
+      </Nav>
+    </defaultProps(Nav)>
+    <div className=\\"markdown-preview\\">
+      <Markdown content=\\"# header\\">
+        <ReactMarkdown source=\\"# header\\" renderers={{...}} escapeHtml={true} skipHtml={false} sourcePos={false} rawSourcePos={false} transformLinkUri={[Function: uriTransformer]} astPlugins={{...}} plugins={{...}} parserOptions={{...}}>
+          <Root>
+            <Heading level={1}>
+              <h1>
+                <TextRenderer nodeKey=\\"text-1-3-0\\" value=\\"header\\">
+                  header
+                </TextRenderer>
+              </h1>
+            </Heading>
+          </Root>
+        </ReactMarkdown>
+      </Markdown>
+    </div>
+  </div>
+</MarkdownPreview>"
+`;

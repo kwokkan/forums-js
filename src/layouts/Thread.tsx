@@ -1,10 +1,11 @@
 import React, { useState } from "react";
-import { Avatar, Button, Content, FlexboxGrid, Input, Panel, PanelGroup } from "rsuite";
+import { Avatar, Button, Content, FlexboxGrid, Panel, PanelGroup } from "rsuite";
 import { IThread } from "../types/IThread";
 import { IUser } from "../types/IUser";
 import { formatDate } from "../utils/dateUtils";
 import { acronym } from "../utils/stringUtils";
 import { Markdown } from "./Markdown";
+import { MarkdownPreview } from "./MarkdownPreview";
 
 export interface IProps {
     thread: IThread;
@@ -45,13 +46,11 @@ export function Thread(props: IProps) {
 
                 {props.user &&
                     <Panel>
-                        <Input
-                            componentClass="textarea"
+                        <MarkdownPreview
                             className="mb-3"
                             rows={10}
                             placeholder="Enter message..."
-                            style={{ resize: "both" }}
-                            value={message}
+                            content={message}
                             onChange={setMessage}
                         />
 
