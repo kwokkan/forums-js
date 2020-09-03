@@ -1,0 +1,27 @@
+
+# readmes
+*.markdown
+*.md
+CHANGELOG
+CHANGES
+LICENCE
+LICENSE
+LICENSE.*
+README
+*.yml
+
+# dev files
+.editorconfig
+.eslintignore
+.eslintrc
+.eslintrc.*
+.gitattributes
+.github
+*.js.flow
+.npmignore
+.nycrc
+bower.json
+
+# misc
+*.map
+
