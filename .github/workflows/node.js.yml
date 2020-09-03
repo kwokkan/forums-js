@@ -38,10 +38,10 @@ jobs:
         path: |
           .next
           node_modules
-        key: npm-v1-${{ runner.os }}-${{ steps.vers.outputs.node }}-${{ hashFiles('yarn.lock') }}
+        key: npm-v1-${{ runner.os }}-${{ steps.vers.outputs.node }}-${{ hashFiles('.yarnclean') }}-${{ hashFiles('yarn.lock') }}
         restore-keys: |
+          npm-v1-${{ runner.os }}-${{ steps.vers.outputs.node }}-${{ hashFiles('.yarnclean') }}-
           npm-v1-${{ runner.os }}-${{ steps.vers.outputs.node }}-
-          npm-v1-${{ runner.os }}-
 
     - run: yarn install
 
