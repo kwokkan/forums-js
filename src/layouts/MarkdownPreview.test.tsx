@@ -1,11 +1,14 @@
-import Enzyme, { mount } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
+/**
+ * @jest-environment jsdom
+*/
+import { mount } from "enzyme";
 import { act } from "react-dom/test-utils";
 import { create } from "react-test-renderer";
+import { setupEnzyme } from "../utils/testUtils";
 import { MarkdownPreview } from "./MarkdownPreview";
 
 beforeAll(() => {
-    Enzyme.configure({ adapter: new Adapter() });
+    setupEnzyme();
 });
 
 test("Renders without error - edit mode", () => {

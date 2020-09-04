@@ -12,6 +12,10 @@ module.exports = {
     moduleNameMapper: {
         "^.+\\.module\\.(css|sass|scss)$": "identity-obj-proxy",
     },
+    setupFilesAfterEnv: [
+        "<rootDir>/config/jest/setupAfterEnv.js"
+    ],
+    testEnvironment:"node",
     transform: {
         "^.+\\.(js|jsx|ts|tsx)$": "babel-jest",
         "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
