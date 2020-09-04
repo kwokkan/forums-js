@@ -1,4 +1,1 @@
-import { addMessage, addThread } from "./threadApi";
-
-export { addMessage };
-export { addThread };
+export { addMessage, addThread } from "./threadApi";
