@@ -1,13 +1,16 @@
-import Enzyme, { mount } from "enzyme";
-import Adapter from "enzyme-adapter-react-16";
+/**
+ * @jest-environment jsdom
+*/
+import { mount } from "enzyme";
 import { act } from "react-dom/test-utils";
 import { create } from "react-test-renderer";
 import { IMessage } from "../types/IMessage";
 import { IThread } from "../types/IThread";
 import { IUser } from "../types/IUser";
+import { setupEnzyme } from "../utils/testUtils";
 
 beforeAll(() => {
-    Enzyme.configure({ adapter: new Adapter() });
+    setupEnzyme();
 });
 
 test("Renders without error", () => {
