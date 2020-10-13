@@ -33,7 +33,7 @@
     "enzyme": "3.11.0",
     "enzyme-adapter-react-16": "1.15.5",
     "jest": "26.5.2",
-    "next": "9.5.4",
+    "next": "9.5.5",
     "pg": "8.4.1",
     "react-test-renderer": "16.13.1",
     "sass": "1.27.0",
