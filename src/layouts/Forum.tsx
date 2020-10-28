@@ -29,7 +29,7 @@ export function Forum({ forum, user }: IProps) {
 
                 {user &&
                     <PanelGroup>
-                        <Link href="/forums/[id]/new" as={`/forums/${forum.id}/new`}>
+                        <Link href={`/forums/${forum.id}/new`}>
                             <a>
                                 <Button appearance="primary">
                                     New Thread
@@ -44,7 +44,7 @@ export function Forum({ forum, user }: IProps) {
                         <Table data={forum.threads} autoHeight wordWrap>
                             <Column flexGrow={11}>
                                 <HeaderCell>Threads</HeaderCell>
-                                <Cell>{(x: IThread) => <Link href="/threads/[id]" as={`/threads/${x.id}`}><a>{x.name}</a></Link>}</Cell>
+                                <Cell>{(x: IThread) => <Link href={`/threads/${x.id}`}><a>{x.name}</a></Link>}</Cell>
                             </Column>
 
                             <Column flexGrow={1}>

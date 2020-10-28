@@ -11,7 +11,7 @@ export function Forums(props: IProps) {
     return (
         <PanelGroup>
             {props.forums.map(x =>
-                <Panel key={x.id} header={<h3><Link href="/forums/[id]" as={`/forums/${x.id}`}><a>{x.name}</a></Link></h3>} bordered>
+                <Panel key={x.id} header={<h3><Link href={`/forums/${x.id}`}><a>{x.name}</a></Link></h3>} bordered>
                     {x.description &&
                         <Content>
                             <p>
