@@ -18,6 +18,7 @@ test("Renders without error", () => {
         const thread: IThread = {
             created: 1,
             id: 2,
+            forumId: 1,
             messages: [],
             name: "Test thread"
         };
@@ -25,7 +26,7 @@ test("Renders without error", () => {
         const { ThreadManager } = require("./ThreadManager");
 
         const tree = create(
-            <ThreadManager thread={thread} />
+            <ThreadManager thread={thread} breadcrumbs={[]} />
         ).toJSON();
 
         expect(tree).toMatchSnapshot();
@@ -56,6 +57,7 @@ test("onNewMessage callback called", (doneCallback) => {
         const thread: IThread = {
             id: 1,
             created: new Date(2020, 1, 1).getTime(),
+            forumId: 1,
             name: "Test thread",
             messages: [
                 {
@@ -67,10 +69,10 @@ test("onNewMessage callback called", (doneCallback) => {
             ]
         };
 
-        const { ThreadManager } = await import("./ThreadManager");
+        const { ThreadManager } = require("./ThreadManager");
 
-        let wrapper = mount(
-            <ThreadManager thread={thread} user={user} />
+        const wrapper = mount(
+            <ThreadManager thread={thread} breadcrumbs={[]} user={user} />
         );
 
         act(() => {

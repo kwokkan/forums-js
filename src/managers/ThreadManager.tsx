@@ -19,6 +19,6 @@ export function ThreadManager(props: IProps) {
     };
 
     return (
-        <Thread thread={thread} user={props.user} onNewMessage={onThreadNewMessage} />
+        <Thread thread={thread} breadcrumbs={props.breadcrumbs} user={props.user} onNewMessage={onThreadNewMessage} />
     );
 }

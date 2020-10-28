@@ -18,12 +18,13 @@ test("Renders with no messages", () => {
     const thread: IThread = {
         id: 1,
         created: new Date(2020, 1, 1).getTime(),
+        forumId: 1,
         name: "Test thread",
         messages: []
     };
 
     const tree = create(
-        <Thread thread={thread} />
+        <Thread thread={thread} breadcrumbs={[]} />
     ).toJSON();
 
     expect(tree).toMatchSnapshot();
@@ -33,6 +34,7 @@ test("Renders with messages", () => {
     const thread: IThread = {
         id: 1,
         created: new Date(2020, 1, 1).getTime(),
+        forumId: 1,
         name: "Test thread",
         messages: [
             {
@@ -49,7 +51,7 @@ test("Renders with messages", () => {
     };
 
     const tree = create(
-        <Thread thread={thread} />
+        <Thread thread={thread} breadcrumbs={[]} />
     ).toJSON();
 
     expect(tree).toMatchSnapshot();
@@ -59,6 +61,7 @@ test("Renders with new message box", () => {
     const thread: IThread = {
         id: 1,
         created: new Date(2020, 1, 1).getTime(),
+        forumId: 1,
         name: "Test thread",
         messages: [
             {
@@ -81,7 +84,7 @@ test("Renders with new message box", () => {
     };
 
     const tree = create(
-        <Thread thread={thread} user={user} />
+        <Thread thread={thread} breadcrumbs={[]} user={user} />
     ).toJSON();
 
     expect(tree).toMatchSnapshot();
@@ -92,6 +95,7 @@ test("onNewMessage callback called", async () => {
     const thread: IThread = {
         id: 1,
         created: new Date(2020, 1, 1).getTime(),
+        forumId: 1,
         name: "Test thread",
         messages: [
             {
@@ -114,7 +118,7 @@ test("onNewMessage callback called", async () => {
     };
 
     let wrapper = mount(
-        <Thread thread={thread} user={user} onNewMessage={mockOnAddNewMessage} />
+        <Thread thread={thread} breadcrumbs={[]} user={user} onNewMessage={mockOnAddNewMessage} />
     );
 
     act(() => {
