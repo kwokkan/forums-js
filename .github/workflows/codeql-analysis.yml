@@ -49,9 +49,9 @@ jobs:
         # queries: ./path/to/local/query, your-org/your-repo/queries@main
         paths: |
           src/
-        paths-ignore:
-          - node_modules
-          - '**/*.test.js'
+        paths-ignore: |
+          node_modules
+          '**/*.test.js'
 
     # Autobuild attempts to build any compiled languages  (C/C++, C#, or Java).
     # If this step fails, then you should remove it and run the build manually (see below)
