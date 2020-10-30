@@ -1,9 +1,9 @@
-name: "My CodeQL config"
-
-paths:
-  - src
+name: "JavaScript CodeQL config"
 
 paths-ignore:
   - node_modules
   - '**/*.test.ts'
   - '**/*.test.tsx'
+
+paths:
+  - src
