@@ -8,5 +8,9 @@ export async function jsonPost(url: string, body: {}): Promise<Response> {
         body: JSON.stringify(body)
     });
 
+    if (!response) {
+        response = {};
+    }
+
     return response;
 }
