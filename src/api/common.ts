@@ -1,5 +1,5 @@
 
-export async function jsonPost(url: string, body: {}, url: number): Promise<Response> {
+export async function jsonPost(url: string, body: {}): Promise<Response> {
     const response = await fetch(url, {
         headers: {
             "Content-Type": "application/json"
