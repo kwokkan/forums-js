@@ -1,5 +1,5 @@
 
-export async function jsonPost(url: string, body: {}): Promise<Response> {
+export async function jsonPost(url: string, body: {}, url: number): Promise<Response> {
     const response = await fetch(url, {
         headers: {
             "Content-Type": "application/json"
@@ -7,10 +7,6 @@ export async function jsonPost(url: string, body: {}): Promise<Response> {
         method: "POST",
         body: JSON.stringify(body)
     });
-
-    if (!response) {
-        response = {};
-    }
 
     return response;
 }
