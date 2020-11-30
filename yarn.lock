@@ -6412,10 +6412,10 @@ rst-selector-parser@^2.2.3:
     lodash.flattendeep "^4.4.0"
     nearley "^2.7.10"
 
-rsuite-table@^3.14.0:
-  version "3.14.0"
-  resolved "https://registry.yarnpkg.com/rsuite-table/-/rsuite-table-3.14.0.tgz#63ef819a4d14c6898468425916c74df81834628e"
-  integrity sha512-60/0D+RegiY4dK1tYgd2tUy4vXedDNEjRdC8hq2rhwzM81PYkbvJ4kZQkIysQGKww98i2MPCNT1w3+Ly6YeT/A==
+rsuite-table@^3.14.1:
+  version "3.14.1"
+  resolved "https://registry.yarnpkg.com/rsuite-table/-/rsuite-table-3.14.1.tgz#2bb682a2b7bae7a94f990b6aa8e667a0dc4f96c6"
+  integrity sha512-4XidYEG21gAiezBz+2HqOSf+hkjZsuM6EMqglcHAUPcxvj1/uWPKHkpL7PCyLzP3uVvr2dNzj4Z/p/Io9XSjDQ==
   dependencies:
     "@babel/runtime" "^7.8.4"
     classnames "^2.2.5"
@@ -6423,10 +6423,10 @@ rsuite-table@^3.14.0:
     element-resize-event "^3.0.2"
     lodash "^4.17.5"
 
-rsuite@4.8.4:
-  version "4.8.4"
-  resolved "https://registry.yarnpkg.com/rsuite/-/rsuite-4.8.4.tgz#6431bec11b03ec8a5e6cc089d6e5ee3f05e07441"
-  integrity sha512-huBJJYDP49DoeKoprVRJEhG0bWJeVFobg/16a1SPFVolrDHaTRxJbHW71uiDLg5PvNvsxJ9VyqwDLivwSksdkg==
+rsuite@4.8.5:
+  version "4.8.5"
+  resolved "https://registry.yarnpkg.com/rsuite/-/rsuite-4.8.5.tgz#99cf77135dbc11227a4db6f3fd9dc9e11f479863"
+  integrity sha512-AN5qr+l5cbIe5rh323rAUsbNdL0jA23Ck3iIGqJ9/71L8YOTgO9RAu3U0kGeCC2D33M0IUkxzslQNyzBbMZkmA==
   dependencies:
     "@babel/runtime" "^7.8.4"
     classnames ">=2.0.0"
@@ -6438,7 +6438,7 @@ rsuite@4.8.4:
     react-lifecycles-compat "^3.0.4"
     react-virtualized "^9.21.0"
     recompose "^0.30.0"
-    rsuite-table "^3.14.0"
+    rsuite-table "^3.14.1"
     schema-typed "^1.5.1"
 
 rsvp@^4.8.4:
