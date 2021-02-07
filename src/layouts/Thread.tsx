@@ -1,14 +1,17 @@
 import React, { useState } from "react";
 import { Avatar, Button, Content, FlexboxGrid, Panel, PanelGroup } from "rsuite";
+import { IBreadcrumb } from "../types/IBreadcrumb";
 import { IThread } from "../types/IThread";
 import { IUser } from "../types/IUser";
 import { formatDate } from "../utils/dateUtils";
 import { acronym } from "../utils/stringUtils";
+import { Breadcrumb } from "./Breadcrumb";
 import { Markdown } from "./Markdown";
 import { MarkdownPreview } from "./MarkdownPreview";
 
 export interface IProps {
     thread: IThread;
+    breadcrumbs: IBreadcrumb[];
     user?: IUser;
     onNewMessage?: (id: number, message: string) => Promise<void>;
 }
@@ -25,7 +28,7 @@ export function Thread(props: IProps) {
     };
 
     return (
-        <Panel header={<h3>{thread.name}</h3>}>
+        <Panel header={<Breadcrumb breadcrumbs={props.breadcrumbs} />}>
             <PanelGroup>
                 {thread.messages.map(x =>
                     <Panel key={x.id}>

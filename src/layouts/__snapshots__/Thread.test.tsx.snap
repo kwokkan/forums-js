@@ -10,11 +10,26 @@ exports[`Renders with messages 1`] = `
     role="rowheader"
     tabIndex={-1}
   >
-    <h3
-      className="rs-panel-title"
+    <ol
+      aria-label="breadcrumbs"
+      className="rs-breadcrumb"
+      role="navigation"
     >
-      Test thread
-    </h3>
+      <li
+        className="rs-breadcrumb-item"
+      >
+        <a
+          href="/"
+          onClick={[Function]}
+          passHref={true}
+          title="Home"
+        >
+          <i
+            className="rs-icon rs-icon-home"
+          />
+        </a>
+      </li>
+    </ol>
   </div>
   <div
     className="rs-panel-body"
@@ -73,11 +88,26 @@ exports[`Renders with new message box 1`] = `
     role="rowheader"
     tabIndex={-1}
   >
-    <h3
-      className="rs-panel-title"
+    <ol
+      aria-label="breadcrumbs"
+      className="rs-breadcrumb"
+      role="navigation"
     >
-      Test thread
-    </h3>
+      <li
+        className="rs-breadcrumb-item"
+      >
+        <a
+          href="/"
+          onClick={[Function]}
+          passHref={true}
+          title="Home"
+        >
+          <i
+            className="rs-icon rs-icon-home"
+          />
+        </a>
+      </li>
+    </ol>
   </div>
   <div
     className="rs-panel-body"
@@ -227,11 +257,26 @@ exports[`Renders with no messages 1`] = `
     role="rowheader"
     tabIndex={-1}
   >
-    <h3
-      className="rs-panel-title"
+    <ol
+      aria-label="breadcrumbs"
+      className="rs-breadcrumb"
+      role="navigation"
     >
-      Test thread
-    </h3>
+      <li
+        className="rs-breadcrumb-item"
+      >
+        <a
+          href="/"
+          onClick={[Function]}
+          passHref={true}
+          title="Home"
+        >
+          <i
+            className="rs-icon rs-icon-home"
+          />
+        </a>
+      </li>
+    </ol>
   </div>
   <div
     className="rs-panel-body"

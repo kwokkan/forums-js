@@ -5,4 +5,5 @@ export interface IThread {
     created: number;
     name: string;
     messages: IMessage[];
+    forumId: number;
 }

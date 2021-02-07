@@ -1,0 +1,56 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Renders with breadcrumbs 1`] = `
+<ol
+  aria-label="breadcrumbs"
+  className="rs-breadcrumb"
+  role="navigation"
+>
+  <li
+    className="rs-breadcrumb-item"
+  >
+    <a
+      href="/"
+      onClick={[Function]}
+      passHref={true}
+      title="Home"
+    >
+      <i
+        className="rs-icon rs-icon-home"
+      />
+    </a>
+  </li>
+  <li
+    className="rs-breadcrumb-separator"
+  >
+    /
+  </li>
+  <li
+    className="rs-breadcrumb-item"
+  >
+    <a
+      href="/urls/1"
+      onClick={[Function]}
+      title="First"
+    >
+      First
+    </a>
+  </li>
+  <li
+    className="rs-breadcrumb-separator"
+  >
+    /
+  </li>
+  <li
+    className="rs-breadcrumb-item"
+  >
+    <a
+      href="/urls/2"
+      onClick={[Function]}
+      title="Second"
+    >
+      Second
+    </a>
+  </li>
+</ol>
+`;

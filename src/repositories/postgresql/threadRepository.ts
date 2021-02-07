@@ -18,6 +18,7 @@ interface IAddTheadParams {
 function mapThread(thread: IThreadTable): IThread {
     return {
         created: thread.created.getTime(),
+        forumId: thread.forum_fk,
         id: thread.thread_pk,
         messages: [],
         name: thread.name
