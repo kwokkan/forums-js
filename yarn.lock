@@ -5493,10 +5493,10 @@ rsuite-table@^3.14.3:
     element-resize-event "^3.0.2"
     lodash "^4.17.5"
 
-rsuite@4.8.9:
-  version "4.8.9"
-  resolved "https://registry.yarnpkg.com/rsuite/-/rsuite-4.8.9.tgz#7dd80a6689f0e34bc77c59d29304a6c23317d3e1"
-  integrity sha512-z/G1f41ABAKbaLH+15HWMARzpOAPU8Iunb4KeDdK+CLjO3+VaTtvmekJ8dPPdh29iVB/l7+MB7+wG95B+B0aIw==
+rsuite@4.9.0:
+  version "4.9.0"
+  resolved "https://registry.yarnpkg.com/rsuite/-/rsuite-4.9.0.tgz#05d76f3a160ed1b4d2a5b74114894cd8daa58c39"
+  integrity sha512-UwDa2EH4jBrbTHRLAgpkIwYYZNEayA8LGDbCRgVKnNaRPODhOuWm4/aAkSzFajcyFUM3B/+E6u03P0uaskFtCw==
   dependencies:
     "@babel/runtime" "^7.8.4"
     classnames ">=2.0.0"
