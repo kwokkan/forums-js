@@ -15,7 +15,7 @@
     "test:watch": "jest --runInBand --watch"
   },
   "dependencies": {
-    "next-auth": "3.10.0",
+    "next-auth": "3.11.2",
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "react-markdown": "5.0.3",
