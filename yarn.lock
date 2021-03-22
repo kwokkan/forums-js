@@ -260,10 +260,17 @@
   dependencies:
     "@babel/helper-plugin-utils" "^7.10.4"
 
-"@babel/runtime@7.12.5", "@babel/runtime@^7.0.0", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7":
+"@babel/runtime@7.12.5":
   version "7.12.5"
   resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.12.5.tgz#410e7e487441e1b360c29be715d870d9b985882e"
   integrity sha512-plcc+hbExy3McchJCEQG3knOsuh3HH+Prx1P6cLIkET/0dLuQDEnrT+s27Axgc9bqfsmNUNHfscgMUdBpC9xfg==
+  dependencies:
+    regenerator-runtime "^0.13.4"
+
+"@babel/runtime@^7.0.0", "@babel/runtime@^7.12.5", "@babel/runtime@^7.8.4", "@babel/runtime@^7.8.7":
+  version "7.13.10"
+  resolved "https://registry.yarnpkg.com/@babel/runtime/-/runtime-7.13.10.tgz#47d42a57b6095f4468da440388fdbad8bebf0d7d"
+  integrity sha512-4QPkjJq6Ns3V/RgpEahRk+AGfL0eO6RHHtTWoNNr5mO49G6B5+X6d6THgWEAvTrznU5xYpbAlVKRYcsCgh/Akw==
   dependencies:
     regenerator-runtime "^0.13.4"
 
@@ -592,6 +599,21 @@
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@panva/asn1.js/-/asn1.js-1.0.0.tgz#dd55ae7b8129e02049f009408b97c61ccf9032f6"
   integrity sha512-UdkG3mLEqXgnlKsWanWcgb6dOjUzJ+XC5f+aWw30qrtjxeNUSfKX1cd5FBzOaXQumoe9nIqeZUvrRJS03HCCtw==
+
+"@rsuite/icon-font@^4.0.0-alpha.2":
+  version "4.0.0-alpha.2"
+  resolved "https://registry.yarnpkg.com/@rsuite/icon-font/-/icon-font-4.0.0-alpha.2.tgz#c31166e7d5123f24f6d1ebea918947d63eb8caf5"
+  integrity sha512-U7jy6W5kDQJXRMPoYzA9TxQfoLA6xR2IWm1O3BE/k4xg9l9xgin1qL6SBrI13bLJJCb3yzOX1tlbNN/BsO7Uww==
+
+"@rsuite/icons@^1.0.0-12":
+  version "1.0.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/@rsuite/icons/-/icons-1.0.0-alpha.3.tgz#51fdbcd8864b3d31fa0399ad5c47fe504913dfac"
+  integrity sha512-MPWq1GZ0wEntb08qkFhdxaMQOGpCV06knoP1sg4GPtpiNSmaTW3S12Y7M4KnaSl0a4gHvH3kOd7NXUefJqoScQ==
+  dependencies:
+    "@rsuite/icon-font" "^4.0.0-alpha.2"
+    classnames "^2.2.5"
+    insert-css "^2.0.0"
+    lodash "^4.17.20"
 
 "@sinonjs/commons@^1.7.0":
   version "1.8.1"
@@ -2903,6 +2925,11 @@ inherits@2.0.3:
   resolved "https://registry.yarnpkg.com/inherits/-/inherits-2.0.3.tgz#633c2c83e3da42a502f52466022480f4208261de"
   integrity sha1-Yzwsg+PaQqUC9SRmAiSA9CCCYd4=
 
+insert-css@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/insert-css/-/insert-css-2.0.0.tgz#eb5d1097b7542f4c79ea3060d3aee07d053880f4"
+  integrity sha1-610Ql7dUL0x56jBg067gfQU4gPQ=
+
 ip-regex@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/ip-regex/-/ip-regex-2.1.0.tgz#fa78bf5d2e6913c911ce9f819ee5146bb6d844e9"
@@ -3897,10 +3924,10 @@ lodash.sortby@^4.7.0:
   resolved "https://registry.yarnpkg.com/lodash.sortby/-/lodash.sortby-4.7.0.tgz#edd14c824e2cc9c1e0b0a1b42bb5210516a42438"
   integrity sha1-7dFMgk4sycHgsKG0K7UhBRakJDg=
 
-lodash@^4.15.0, lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.19, lodash@^4.17.5:
-  version "4.17.20"
-  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.20.tgz#b44a9b6297bcb698f1c51a3545a2b3b368d59c52"
-  integrity sha512-PlhdFcillOINfeV7Ni6oF1TAEayyZBoZ8bcshTHqOYJYlrqzRK5hagpagky5o4HfCzzd1TRkXPMFq6cKk9rGmA==
+lodash@^4.15.0, lodash@^4.17.11, lodash@^4.17.13, lodash@^4.17.19, lodash@^4.17.20:
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
 
 loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.3.0, loose-envify@^1.4.0:
   version "1.4.0"
@@ -5263,21 +5290,22 @@ rst-selector-parser@^2.2.3:
     lodash.flattendeep "^4.4.0"
     nearley "^2.7.10"
 
-rsuite-table@^3.14.3:
-  version "3.14.3"
-  resolved "https://registry.yarnpkg.com/rsuite-table/-/rsuite-table-3.14.3.tgz#f041908d60df5af25d2b9be7c7eae65361b84deb"
-  integrity sha512-F7LvKfAXH2ZpnXT41PawYUxytQt8S+CgTUq4Co9niD1cmRnIX3qADip2T18JjFiQKkjCP1ajs613XgFLgn/W3g==
+rsuite-table@^3.14.4:
+  version "3.14.5"
+  resolved "https://registry.yarnpkg.com/rsuite-table/-/rsuite-table-3.14.5.tgz#75110d1ad7c0e39f502af1d51abcb0613a474a26"
+  integrity sha512-WlBHrijN2vNk/mlEtBGNjbLhKXVurzY/GWuiyNVTOvhtBp7y3CyLWxPVm48ZwBCyhrhA39urTDZaEjaPI8FP/Q==
   dependencies:
-    "@babel/runtime" "^7.8.4"
+    "@babel/runtime" "^7.12.5"
+    "@rsuite/icons" "^1.0.0-12"
     classnames "^2.2.5"
     dom-lib "^1.2.1"
     element-resize-event "^3.0.2"
-    lodash "^4.17.5"
+    lodash "^4.17.20"
 
-rsuite@4.9.2:
-  version "4.9.2"
-  resolved "https://registry.yarnpkg.com/rsuite/-/rsuite-4.9.2.tgz#6591c11a35ec5ee5520cbb1a4566c88f03038ad0"
-  integrity sha512-+dSJNZqtmsCe3+vucUdxdKt9MSQwU6KKrGdbCsCiRz9wLSkoUvg0MLBOw0eEixZssVg1dWPRFG54qhv5Ru7c3Q==
+rsuite@4.9.3:
+  version "4.9.3"
+  resolved "https://registry.yarnpkg.com/rsuite/-/rsuite-4.9.3.tgz#f0b4fd130fb61fac6e9765e3bef849ff52c51086"
+  integrity sha512-OpUsnrMhrE7nSDKiVfUUbwG4AhK2lgbe7sAGYk0GnFgDeD3rtznKrukhQNi9T1W/MBuTib0BGzCHq1k1MoD6PQ==
   dependencies:
     "@babel/runtime" "^7.8.4"
     classnames ">=2.0.0"
@@ -5289,7 +5317,7 @@ rsuite@4.9.2:
     react-lifecycles-compat "^3.0.4"
     react-virtualized "^9.21.0"
     recompose "^0.30.0"
-    rsuite-table "^3.14.3"
+    rsuite-table "^3.14.4"
     schema-typed "^1.5.1"
 
 rsvp@^4.8.4:
