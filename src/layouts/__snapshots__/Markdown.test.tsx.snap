@@ -5,15 +5,23 @@ Array [
   <h1>
     header
   </h1>,
+  "
+",
   <h2>
     sub header
   </h2>,
+  "
+",
   "<script>alert(1)</script>",
+  "
+",
   <p>
     &lt;b&gt;
     bold
     &lt;/b&gt;
   </p>,
+  "
+",
   <p>
     <a
       href="http://localhost:3000"
@@ -21,6 +29,8 @@ Array [
       my link
     </a>
   </p>,
+  "
+",
   <p>
     normal content
   </p>,
