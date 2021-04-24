@@ -6,6 +6,8 @@ interface IProps {
 
 export function Markdown(props: IProps) {
     return (
-        <ReactMarkdown source={props.content} />
+        <ReactMarkdown>
+            {props.content}
+        </ReactMarkdown>
     );
 }
