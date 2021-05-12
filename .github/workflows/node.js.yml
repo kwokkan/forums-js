@@ -69,5 +69,5 @@ jobs:
         with:
           name: coverage-artifact
 
-      - uses: codecov/codecov-action@v1
+      - uses: codecov/codecov-action@v1.5.0
 
