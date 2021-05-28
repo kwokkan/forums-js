@@ -33,7 +33,7 @@ jobs:
         echo "::set-output name=node::$(node -v)"
 
     - name: Cache
-      uses: actions/cache@v2.1.5
+      uses: actions/cache@v2.1.6
       with:
         path: |
           .next
