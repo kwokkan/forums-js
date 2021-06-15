@@ -2075,10 +2075,10 @@ electron-to-chromium@^1.3.723:
   resolved "https://registry.yarnpkg.com/electron-to-chromium/-/electron-to-chromium-1.3.734.tgz#c8d318a4eb27509190cf3a08870dbcbf06c74dcb"
   integrity sha512-iQF2mjPZ6zNNq45kbJ6MYZYCBNdv2JpGiJC/lVx4tGJWi9MNg73KkL9sWGN4X4I/CP2SBLWsT8nPADZZpAHIyw==
 
-element-resize-event@^3.0.2, element-resize-event@^3.0.3:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/element-resize-event/-/element-resize-event-3.0.3.tgz#3f59facef6b8f23fbd678a5f364ee5723af98a2a"
-  integrity sha512-vhGNxT87PdZA6Ak4E0QhArwGzNcSPUwSN7n9wCFLeBlY2NNuuiwguQuQIp7P5oB65PLJ892yKcHiqz1xLWeiug==
+element-resize-event@^3.0.2, element-resize-event@^3.0.6:
+  version "3.0.6"
+  resolved "https://registry.yarnpkg.com/element-resize-event/-/element-resize-event-3.0.6.tgz#3a18efd4879ad615e979fd8bbf173b014987eb9a"
+  integrity sha512-sSeXY9rNDp86bJODW68pxLcy3A5FrPZfIgOrJHzqgYzX513Zq6/ytdBigp7KeJEpZZopBBSiO1cVuiRkZpNxLw==
 
 elliptic@^6.0.0, elliptic@^6.5.2:
   version "6.5.4"
@@ -5419,16 +5419,16 @@ rsuite-table@^3.15.1:
     element-resize-event "^3.0.2"
     lodash "^4.17.20"
 
-rsuite@4.10.1:
-  version "4.10.1"
-  resolved "https://registry.yarnpkg.com/rsuite/-/rsuite-4.10.1.tgz#fbc1d2268c68cdc87ee2a198cacf137bdccb8aa1"
-  integrity sha512-8bogEx66KYw09O4Cxc0IRgQSQKCX+EbqBBmOVso5V8YmeeN3NM7H806kPQZ08bIYvaTKvFRtCe4TiriKPYcu4g==
+rsuite@4.10.2:
+  version "4.10.2"
+  resolved "https://registry.yarnpkg.com/rsuite/-/rsuite-4.10.2.tgz#58bc5179257cb651471c59effe5e96529f2aee62"
+  integrity sha512-AEuYBEByiYGgLFfLt2ASTYvc9nKMMERKFxY9CiA/KejsqyMOMbp1VCdMWdFZeWRhtg2JXNCmDgO7IJJLLTMLag==
   dependencies:
     "@babel/runtime" "^7.8.4"
     classnames ">=2.0.0"
     date-fns "^1.30.1"
     dom-lib "^1.2.1"
-    element-resize-event "^3.0.3"
+    element-resize-event "^3.0.6"
     lodash "^4.17.11"
     prop-types "^15.7.2"
     react-lifecycles-compat "^3.0.4"
