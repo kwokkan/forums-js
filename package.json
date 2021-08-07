@@ -27,7 +27,7 @@
     "@types/jest": "26.0.24",
     "@types/node": "16.4.13",
     "@types/pg": "8.6.1",
-    "@types/react": "17.0.14",
+    "@types/react": "17.0.16",
     "@types/react-dom": "17.0.9",
     "@types/react-test-renderer": "17.0.1",
     "enzyme": "3.11.0",
