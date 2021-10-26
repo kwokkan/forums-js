@@ -22,7 +22,7 @@
     "rsuite": "4.10.2"
   },
   "devDependencies": {
-    "@types/enzyme": "3.10.9",
+    "@types/enzyme": "3.10.10",
     "@types/enzyme-adapter-react-16": "1.0.6",
     "@types/jest": "27.0.2",
     "@types/node": "16.11.4",
