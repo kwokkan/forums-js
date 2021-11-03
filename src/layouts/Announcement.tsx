@@ -12,8 +12,8 @@ export function Announcement(props: IProps) {
             showIcon
             type="info"
             title={props.title}
-            description={<p>{props.message}</p>}
         >
+            <p>{props.message}</p>
         </Message>
     );
 }
