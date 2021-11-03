@@ -19,7 +19,7 @@
     "react": "16.14.0",
     "react-dom": "16.14.0",
     "react-markdown": "6.0.3",
-    "rsuite": "4.10.2"
+    "rsuite": "5.1.0"
   },
   "devDependencies": {
     "@types/enzyme": "3.10.10",
