@@ -13,10 +13,10 @@ beforeAll(() => {
 
 test("Renders without error", () => {
     jest.isolateModules(() => {
-        const { NewThreadManager } = require("./NewThreadManager");
+    const { NewThreadManager } = require("./NewThreadManager");
 
         const tree = create(
-            <NewThreadManager />
+            <NewThreadManager forumId={10} />
         ).toJSON();
 
         expect(tree).toMatchSnapshot();
@@ -55,7 +55,7 @@ test("onNewThread callback called", (doneCallback) => {
             <NewThreadManager forumId={10} />
         );
 
-        act(() => {
+        await act(() => {
             wrapper.find('input[name="title"]').simulate("change", { target: { value: "New title" } });
             wrapper.find('textarea[name="message"]').simulate("change", { target: { value: "New message" } });
         });
