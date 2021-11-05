@@ -2,12 +2,11 @@
 
 exports[`Renders with messages 1`] = `
 <div
-  className="rs-panel rs-panel-default"
+  className="rs-panel"
 >
   <div
-    className="rs-panel-heading"
-    onClick={[Function]}
-    role="rowheader"
+    aria-controls={null}
+    className="rs-panel-header"
     tabIndex={-1}
   >
     <h3
@@ -18,17 +17,19 @@ exports[`Renders with messages 1`] = `
   </div>
   <div
     className="rs-panel-body"
+    role="region"
   >
     <div
       className="rs-panel-group"
     >
       <div
-        className="rs-panel rs-panel-default"
+        className="rs-panel"
       >
         <div
           className="rs-panel-body"
+          role="region"
         >
-          <div
+          <main
             className="rs-content"
           >
             <div
@@ -38,7 +39,7 @@ exports[`Renders with messages 1`] = `
                 className="rs-flex-box-grid-item rs-flex-box-grid-item-0"
               >
                 <div
-                  className="rs-avatar mr-3 rs-avatar-lg"
+                  className="mr-3 rs-avatar rs-avatar-lg"
                   title="Test user"
                 >
                   Tu
@@ -55,7 +56,7 @@ exports[`Renders with messages 1`] = `
                 </p>
               </div>
             </div>
-          </div>
+          </main>
         </div>
       </div>
     </div>
@@ -65,12 +66,11 @@ exports[`Renders with messages 1`] = `
 
 exports[`Renders with new message box 1`] = `
 <div
-  className="rs-panel rs-panel-default"
+  className="rs-panel"
 >
   <div
-    className="rs-panel-heading"
-    onClick={[Function]}
-    role="rowheader"
+    aria-controls={null}
+    className="rs-panel-header"
     tabIndex={-1}
   >
     <h3
@@ -81,17 +81,19 @@ exports[`Renders with new message box 1`] = `
   </div>
   <div
     className="rs-panel-body"
+    role="region"
   >
     <div
       className="rs-panel-group"
     >
       <div
-        className="rs-panel rs-panel-default"
+        className="rs-panel"
       >
         <div
           className="rs-panel-body"
+          role="region"
         >
-          <div
+          <main
             className="rs-content"
           >
             <div
@@ -101,7 +103,7 @@ exports[`Renders with new message box 1`] = `
                 className="rs-flex-box-grid-item rs-flex-box-grid-item-0"
               >
                 <div
-                  className="rs-avatar mr-3 rs-avatar-lg"
+                  className="mr-3 rs-avatar rs-avatar-lg"
                   title="Test user"
                 >
                   Tu
@@ -118,14 +120,15 @@ exports[`Renders with new message box 1`] = `
                 </p>
               </div>
             </div>
-          </div>
+          </main>
         </div>
       </div>
       <div
-        className="rs-panel rs-panel-default"
+        className="rs-panel"
       >
         <div
           className="rs-panel-body"
+          role="region"
         >
           <div
             className="mb-3"
@@ -133,55 +136,43 @@ exports[`Renders with new message box 1`] = `
             <div
               className="rs-nav rs-nav-subtle rs-nav-horizontal"
             >
-              <ul>
-                <li
-                  className="rs-nav-item preview-strip-1 rs-nav-item-active"
+              <a
+                aria-selected={true}
+                className="preview-strip-1 rs-nav-item rs-nav-item-active"
+                href="#"
+                onClick={[Function]}
+                role="button"
+              >
+                Text
+                <span
+                  className="rs-ripple-pond"
                 >
-                  <a
-                    className="rs-nav-item-content"
-                    onClick={[Function]}
-                    role="button"
-                    tabIndex={0}
-                  >
-                    Text
-                    <span
-                      className="rs-ripple-pond"
-                    >
-                      <span
-                        className="rs-ripple"
-                        style={Object {}}
-                      />
-                    </span>
-                  </a>
-                </li>
-                <li
-                  className="rs-nav-item preview-strip-2"
+                  <span
+                    className="rs-ripple"
+                  />
+                </span>
+              </a>
+              <a
+                className="preview-strip-2 rs-nav-item"
+                href="#"
+                onClick={[Function]}
+                role="button"
+              >
+                Preview
+                <span
+                  className="rs-ripple-pond"
                 >
-                  <a
-                    className="rs-nav-item-content"
-                    onClick={[Function]}
-                    role="button"
-                    tabIndex={0}
-                  >
-                    Preview
-                    <span
-                      className="rs-ripple-pond"
-                    >
-                      <span
-                        className="rs-ripple"
-                        style={Object {}}
-                      />
-                    </span>
-                  </a>
-                </li>
-              </ul>
+                  <span
+                    className="rs-ripple"
+                  />
+                </span>
+              </a>
               <div
-                className="rs-nav-waterline"
+                className="rs-nav-bar"
               />
             </div>
             <textarea
               className="rs-input"
-              id={null}
               onChange={[Function]}
               onKeyDown={[Function]}
               placeholder="Enter message..."
@@ -206,7 +197,6 @@ exports[`Renders with new message box 1`] = `
             >
               <span
                 className="rs-ripple"
-                style={Object {}}
               />
             </span>
           </button>
@@ -219,12 +209,11 @@ exports[`Renders with new message box 1`] = `
 
 exports[`Renders with no messages 1`] = `
 <div
-  className="rs-panel rs-panel-default"
+  className="rs-panel"
 >
   <div
-    className="rs-panel-heading"
-    onClick={[Function]}
-    role="rowheader"
+    aria-controls={null}
+    className="rs-panel-header"
     tabIndex={-1}
   >
     <h3
@@ -235,6 +224,7 @@ exports[`Renders with no messages 1`] = `
   </div>
   <div
     className="rs-panel-body"
+    role="region"
   >
     <div
       className="rs-panel-group"

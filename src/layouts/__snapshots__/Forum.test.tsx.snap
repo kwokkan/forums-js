@@ -2,12 +2,11 @@
 
 exports[`Renders with description 1`] = `
 <div
-  className="rs-panel rs-panel-default"
+  className="rs-panel"
 >
   <div
-    className="rs-panel-heading"
-    onClick={[Function]}
-    role="rowheader"
+    aria-controls={null}
+    className="rs-panel-header"
     tabIndex={-1}
   >
     <h3
@@ -18,27 +17,27 @@ exports[`Renders with description 1`] = `
   </div>
   <div
     className="rs-panel-body"
+    role="region"
   >
-    <div
+    <main
       className="rs-content"
     >
       <p>
         Forum description.
       </p>
       <hr />
-    </div>
+    </main>
   </div>
 </div>
 `;
 
 exports[`Renders with new thread button 1`] = `
 <div
-  className="rs-panel rs-panel-default"
+  className="rs-panel"
 >
   <div
-    className="rs-panel-heading"
-    onClick={[Function]}
-    role="rowheader"
+    aria-controls={null}
+    className="rs-panel-header"
     tabIndex={-1}
   >
     <h3
@@ -49,8 +48,9 @@ exports[`Renders with new thread button 1`] = `
   </div>
   <div
     className="rs-panel-body"
+    role="region"
   >
-    <div
+    <main
       className="rs-content"
     >
       <p>
@@ -75,25 +75,23 @@ exports[`Renders with new thread button 1`] = `
             >
               <span
                 className="rs-ripple"
-                style={Object {}}
               />
             </span>
           </button>
         </a>
       </div>
-    </div>
+    </main>
   </div>
 </div>
 `;
 
 exports[`Renders with nothing 1`] = `
 <div
-  className="rs-panel rs-panel-default"
+  className="rs-panel"
 >
   <div
-    className="rs-panel-heading"
-    onClick={[Function]}
-    role="rowheader"
+    aria-controls={null}
+    className="rs-panel-header"
     tabIndex={-1}
   >
     <h3
@@ -104,8 +102,9 @@ exports[`Renders with nothing 1`] = `
   </div>
   <div
     className="rs-panel-body"
+    role="region"
   >
-    <div
+    <main
       className="rs-content"
     />
   </div>

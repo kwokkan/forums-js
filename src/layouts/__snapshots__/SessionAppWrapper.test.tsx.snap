@@ -259,197 +259,187 @@ exports[`Renders without session 1`] = `
 <div
   className="navbar-page"
 >
-  <div
+  <section
     className="rs-container"
   >
-    <div
+    <header
       className="rs-header"
     >
-      <div
+      <nav
         className="rs-navbar rs-navbar-default"
-        role="navigation"
       >
+        <a
+          className="rs-navbar-brand"
+        >
+          <img
+            alt="Logo"
+            className="mr-3"
+            height="24"
+            src="/logo.png"
+            title="Forums JS"
+            width="24"
+          />
+          Forums JS
+        </a>
         <div
-          className="rs-navbar-header"
+          className="rs-navbar-nav rs-nav rs-nav-default rs-nav-horizontal"
         >
           <a
-            className="navbar-brand logo"
+            className="rs-navbar-item"
             href="/"
             onClick={[Function]}
             onMouseEnter={[Function]}
           >
-            <img
-              alt="Logo"
-              className="mr-3"
-              height="24"
-              src="/logo.png"
-              title="Forums JS"
-              width="24"
-            />
-            Forums JS
+            <svg
+              aria-hidden={true}
+              aria-label="explore"
+              className="rs-icon"
+              data-category="application"
+              fill="currentColor"
+              focusable={false}
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M8 15A7 7 0 108 1a7 7 0 000 14zm0 1A8 8 0 118 0a8 8 0 010 16z"
+              />
+              <path
+                d="M9.238 9.238l1.858-4.334-4.334 1.858 2.477 2.477zM6 6l5.851-2.508a.5.5 0 01.657.657L10 10l-5.851 2.508a.5.5 0 01-.657-.657L6 6z"
+              />
+            </svg>
+            Home
+            <span
+              className="rs-ripple-pond"
+            >
+              <span
+                className="rs-ripple"
+              />
+            </span>
+          </a>
+          <a
+            className="rs-navbar-item"
+            href="#"
+            onClick={[Function]}
+            role="button"
+          >
+            Forums
+            <span
+              className="rs-ripple-pond"
+            >
+              <span
+                className="rs-ripple"
+              />
+            </span>
+          </a>
+          <a
+            className="rs-navbar-item"
+            href="#"
+            onClick={[Function]}
+            role="button"
+          >
+            New Posts
+            <span
+              className="rs-ripple-pond"
+            >
+              <span
+                className="rs-ripple"
+              />
+            </span>
+          </a>
+          <a
+            className="rs-navbar-item"
+            href="/about"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
+          >
+            About
+            <span
+              className="rs-ripple-pond"
+            >
+              <span
+                className="rs-ripple"
+              />
+            </span>
           </a>
         </div>
         <div
-          className="rs-navbar-body"
+          className="rs-navbar-nav rs-navbar-right rs-nav rs-nav-default rs-nav-horizontal"
         >
-          <div
-            className="rs-nav rs-nav-default rs-navbar-nav rs-nav-horizontal"
+          <a
+            className="rs-navbar-item"
+            href="https://github.com/kwokkan/forums-js"
+            onClick={[Function]}
+            rel="noreferrer noopener"
+            target="_blank"
           >
-            <ul>
-              <li
-                className="rs-nav-item"
-              >
-                <a
-                  className="rs-nav-item-content"
-                  href="/"
-                  onClick={[Function]}
-                  onMouseEnter={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <i
-                    className="rs-icon rs-icon-home"
-                  />
-                  Home
-                  <span
-                    className="rs-ripple-pond"
-                  >
-                    <span
-                      className="rs-ripple"
-                      style={Object {}}
-                    />
-                  </span>
-                </a>
-              </li>
-              <li
-                className="rs-nav-item"
-              >
-                <a
-                  className="rs-nav-item-content"
-                  onClick={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  Forums
-                  <span
-                    className="rs-ripple-pond"
-                  >
-                    <span
-                      className="rs-ripple"
-                      style={Object {}}
-                    />
-                  </span>
-                </a>
-              </li>
-              <li
-                className="rs-nav-item"
-              >
-                <a
-                  className="rs-nav-item-content"
-                  onClick={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  New Posts
-                  <span
-                    className="rs-ripple-pond"
-                  >
-                    <span
-                      className="rs-ripple"
-                      style={Object {}}
-                    />
-                  </span>
-                </a>
-              </li>
-              <li
-                className="rs-nav-item"
-              >
-                <a
-                  className="rs-nav-item-content"
-                  href="/about"
-                  onClick={[Function]}
-                  onMouseEnter={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  About
-                  <span
-                    className="rs-ripple-pond"
-                  >
-                    <span
-                      className="rs-ripple"
-                      style={Object {}}
-                    />
-                  </span>
-                </a>
-              </li>
-            </ul>
-          </div>
-          <div
-            className="rs-nav rs-nav-default rs-navbar-nav rs-navbar-right rs-nav-horizontal"
+            <svg
+              aria-hidden={true}
+              aria-label="rate"
+              className="rs-icon"
+              data-category="application"
+              fill="currentColor"
+              focusable={false}
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M2.58 2.995L2 2.582l-.58.413a.042.042 0 01-.034.006.04.04 0 01-.027-.049l.205-.695-.56-.435a.06.06 0 01-.023-.046.06.06 0 01.058-.061L1.74 1.7l.225-.664a.037.037 0 01.023-.023.037.037 0 01.047.023l.225.664.701.015a.06.06 0 01.036.106l-.56.435.205.695a.04.04 0 01-.006.034.039.039 0 01-.055.009zM2 3.809a1.04 1.04 0 001.6-1.141l-.012-.04.021-.016A1.06 1.06 0 002.981.715a1.036 1.036 0 00-1.963 0 1.06 1.06 0 00-.627 1.896l.021.016-.012.04a1.04 1.04 0 001.601 1.142zm.58 5.186L2 8.581l-.58.413A.042.042 0 011.386 9a.04.04 0 01-.027-.049l.205-.695-.56-.435a.06.06 0 01-.023-.046.06.06 0 01.058-.061l.701-.015.225-.664a.037.037 0 01.023-.023.037.037 0 01.047.023l.225.664.701.015a.06.06 0 01.036.106l-.56.435.205.695a.04.04 0 01-.006.034.039.039 0 01-.055.009zM2 9.809a1.04 1.04 0 001.6-1.141l-.012-.04.021-.016a1.06 1.06 0 00-.628-1.897 1.037 1.037 0 00-1.963 0 1.06 1.06 0 00-.627 1.896l.021.016-.012.04a1.04 1.04 0 001.601 1.142zm.58 5.186L2 14.581l-.58.413a.042.042 0 01-.034.006.04.04 0 01-.027-.049l.205-.695-.56-.435a.06.06 0 01-.023-.046.06.06 0 01.058-.061l.701-.015.225-.664a.037.037 0 01.023-.023.037.037 0 01.047.023l.225.664.701.015a.06.06 0 01.036.106l-.56.435.205.695a.04.04 0 01-.006.034.039.039 0 01-.055.009zm-.58.814a1.04 1.04 0 001.6-1.141l-.012-.04.021-.016a1.06 1.06 0 00-.628-1.897 1.037 1.037 0 00-1.963 0 1.06 1.06 0 00-.627 1.896l.021.016-.012.04a1.04 1.04 0 001.601 1.142zM8.58 2.995L8 2.582l-.58.413a.042.042 0 01-.034.006.04.04 0 01-.027-.049l.205-.695-.56-.435a.06.06 0 01-.023-.046.06.06 0 01.058-.061L7.74 1.7l.225-.664a.037.037 0 01.023-.023.037.037 0 01.047.023l.225.664.701.015a.06.06 0 01.035.106l-.56.435.205.695a.04.04 0 01-.006.034.039.039 0 01-.055.009zM8 3.809a1.04 1.04 0 001.6-1.141l-.012-.04.021-.016A1.06 1.06 0 008.981.715a1.036 1.036 0 00-1.964 0 1.06 1.06 0 00-.627 1.896l.021.016-.012.04A1.04 1.04 0 008 3.809zm.58 5.186L8 8.581l-.58.413A.042.042 0 017.386 9a.04.04 0 01-.027-.049l.205-.695-.56-.435a.06.06 0 01-.023-.046.06.06 0 01.058-.061l.701-.015.225-.664a.037.037 0 01.023-.023.037.037 0 01.047.023l.225.664.701.015a.06.06 0 01.035.106l-.56.435.205.695a.04.04 0 01-.006.034.039.039 0 01-.055.009zM8 9.809a1.04 1.04 0 001.6-1.141l-.012-.04.021-.016a1.06 1.06 0 00-.628-1.897 1.037 1.037 0 00-1.964 0 1.06 1.06 0 00-.627 1.896l.021.016-.012.04A1.04 1.04 0 008 9.809zM14.58 2.995L14 2.582l-.58.413a.042.042 0 01-.034.006.04.04 0 01-.027-.049l.205-.695-.56-.435a.06.06 0 01-.023-.046.06.06 0 01.058-.061l.701-.015.225-.664a.037.037 0 01.023-.023.037.037 0 01.047.023l.225.664.701.015a.06.06 0 01.035.106l-.56.435.205.695a.04.04 0 01-.006.034.039.039 0 01-.055.009zm-.58.814a1.04 1.04 0 001.6-1.141l-.012-.04.021-.016a1.06 1.06 0 00-.628-1.897 1.036 1.036 0 00-1.964 0 1.06 1.06 0 00-.627 1.896l.021.016-.012.04A1.04 1.04 0 0014 3.809z"
+              />
+            </svg>
+            Fork me
+            <span
+              className="rs-ripple-pond"
+            >
+              <span
+                className="rs-ripple"
+              />
+            </span>
+          </a>
+          <a
+            className="rs-navbar-item"
+            href="/api/auth/signin"
+            onClick={[Function]}
+            onMouseEnter={[Function]}
           >
-            <ul>
-              <li
-                className="rs-nav-item"
-              >
-                <a
-                  className="rs-nav-item-content"
-                  href="https://github.com/kwokkan/forums-js"
-                  onClick={[Function]}
-                  rel="noreferrer noopener"
-                  role="button"
-                  tabIndex={0}
-                  target="_blank"
-                >
-                  <i
-                    className="rs-icon rs-icon-github"
-                  />
-                  Fork me
-                  <span
-                    className="rs-ripple-pond"
-                  >
-                    <span
-                      className="rs-ripple"
-                      style={Object {}}
-                    />
-                  </span>
-                </a>
-              </li>
-              <li
-                className="rs-nav-item"
-              >
-                <a
-                  className="rs-nav-item-content"
-                  href="/api/auth/signin"
-                  onClick={[Function]}
-                  onMouseEnter={[Function]}
-                  role="button"
-                  tabIndex={0}
-                >
-                  <i
-                    className="rs-icon rs-icon-cog"
-                  />
-                  Login
-                  <span
-                    className="rs-ripple-pond"
-                  >
-                    <span
-                      className="rs-ripple"
-                      style={Object {}}
-                    />
-                  </span>
-                </a>
-              </li>
-            </ul>
-          </div>
+            <svg
+              aria-hidden={true}
+              aria-label="gear"
+              className="rs-icon"
+              data-category="action"
+              fill="currentColor"
+              focusable={false}
+              height="1em"
+              viewBox="0 0 16 16"
+              width="1em"
+            >
+              <path
+                d="M11.967 4.96l-.354-.461.845-2.002-1.935-1.117-1.315 1.738-.574-.073a4.986 4.986 0 00-1.28.003l-.576.076-1.319-1.743-1.935 1.117.85 2.015-.35.461a5.078 5.078 0 00-.638 1.106l-.224.534-2.17.271v2.234l2.169.271.223.537c.164.396.378.769.638 1.11l.35.461-.847 2.008 1.935 1.117 1.312-1.733.576.076c.428.056.862.056 1.291.001l.576-.075 1.31 1.731 1.935-1.117-.842-1.996.352-.461a5.052 5.052 0 00.65-1.125l.223-.536 2.15-.269V6.885l-2.154-.269-.223-.536a4.983 4.983 0 00-.646-1.118zm1.569.733l1.579.197a1 1 0 01.876.992v2.234a1 1 0 01-.876.992l-1.574.197a6.127 6.127 0 01-.778 1.348l.617 1.461a1 1 0 01-.421 1.255l-1.935 1.117a1 1 0 01-1.297-.262l-.96-1.268a5.994 5.994 0 01-1.549-.001l-.961 1.269a.999.999 0 01-1.297.262l-1.935-1.117a1 1 0 01-.421-1.255l.622-1.475a5.974 5.974 0 01-.765-1.332l-1.592-.199a1 1 0 01-.876-.992V6.882a1 1 0 01.876-.992l1.596-.199a6.156 6.156 0 01.764-1.324l-.625-1.482a1 1 0 01.421-1.255L4.96.513a1 1 0 011.297.262l.968 1.279a5.982 5.982 0 011.536-.003L9.727.775a.999.999 0 011.297-.262l1.935 1.117a1 1 0 01.421 1.255l-.619 1.467c.318.414.577.866.775 1.341z"
+              />
+              <path
+                d="M8 10a2 2 0 10.001-3.999A2 2 0 008 10zm0 1a3 3 0 110-6 3 3 0 010 6z"
+              />
+            </svg>
+            Login
+            <span
+              className="rs-ripple-pond"
+            >
+              <span
+                className="rs-ripple"
+              />
+            </span>
+          </a>
         </div>
-      </div>
-    </div>
-    <div
+      </nav>
+    </header>
+    <main
       className="rs-content"
     >
       <div
-        className="rs-message rs-message-info rs-message-show rs-message-has-title rs-message-has-icon"
+        className="rs-message rs-message-info rs-message-show rs-message-has-icon"
+        role="alert"
+        title="Coming soon"
       >
         <div
           className="rs-message-container"
@@ -457,18 +447,25 @@ exports[`Renders without session 1`] = `
           <div
             className="rs-message-icon-wrapper"
           >
-            <i
-              className="rs-icon rs-icon-info"
-            />
+            <svg
+              aria-hidden={true}
+              aria-label="info"
+              className="rs-icon"
+              data-category="legacy"
+              fill="currentColor"
+              focusable={false}
+              height="1em"
+              viewBox="0 0 14 14"
+              width="1em"
+            >
+              <path
+                d="M7 14A7 7 0 117 0a7 7 0 010 14zm0-9.333a1.167 1.167 0 100-2.334 1.167 1.167 0 000 2.334zm0 1.166c-.644 0-1.167.522-1.167 1.167v3.5a1.167 1.167 0 002.334 0V7c0-.644-.522-1.167-1.167-1.167z"
+              />
+            </svg>
           </div>
           <div
             className="rs-message-content"
           >
-            <h5
-              className="rs-message-header"
-            >
-              Coming soon
-            </h5>
             <div
               className="rs-message-body"
             >
@@ -482,7 +479,7 @@ exports[`Renders without session 1`] = `
       <p>
         Test
       </p>
-    </div>
-  </div>
+    </main>
+  </section>
 </div>
 `;
