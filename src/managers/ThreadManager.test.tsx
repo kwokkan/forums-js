@@ -81,10 +81,8 @@ test("onNewMessage callback called", (doneCallback) => {
             wrapper.find("button").simulate("click");
         });
 
-        setImmediate(() => {
-            expect(mockAddMessage).toBeCalledWith(1, "New message");
+        expect(mockAddMessage).toBeCalledWith(1, "New message");
 
-            doneCallback();
-        });
+        doneCallback();
     });
 });

@@ -30,7 +30,7 @@ describe("addMessage", () => {
 
         const result = async () => await addMessage(1, 2, "New message");
 
-        expect(result).rejects.toThrowError("Thread 1 does not exist.");
+        await expect(result).rejects.toThrowError("Thread 1 does not exist.");
 
         expect(mockGetThreadById).toBeCalledWith(1);
     });
@@ -56,9 +56,7 @@ describe("addMessage", () => {
 
         const result = async () => await addMessage(1, 2, "New message");
 
-        expect(result).rejects.toThrowError("Failed to add message.");
-
-        await Promise.resolve();
+        await expect(result).rejects.toThrowError("Failed to add message.");
 
         expect(mockGetThreadById).toBeCalledWith(1);
         expect(mockAddMessage).toBeCalledWith(1, 2, "New message");
@@ -128,7 +126,7 @@ describe("addThread", () => {
         expect(result).toBeUndefined();
     });
 
-    test("Invalid forum - throws error", async (donecallback) => {
+    test("Invalid forum - throws error", async () => {
         const mockGetForumById = jest.fn(() => undefined);
 
         jest.doMock("../repositories", () => {
@@ -144,14 +142,10 @@ describe("addThread", () => {
 
         expect(result).rejects.toThrowError("Forum 10 does not exist.");
 
-        setImmediate(() => {
-            expect(mockGetForumById).toBeCalledWith(10);
-
-            donecallback();
-        });
+        expect(mockGetForumById).toBeCalledWith(10);
     });
 
-    test("Add thread error - throws error", async (donecallback) => {
+    test("Add thread error - throws error", async () => {
         const mockGetForumById = jest.fn((): IForum => ({
             created: 1,
             id: 10,
@@ -171,17 +165,14 @@ describe("addThread", () => {
 
         const result = async () => await addThread(10, 1, "New title", "New message");
 
-        expect(result).rejects.toThrowError("Failed to add thread.");
+        await expect(result).rejects.toThrowError("Failed to add thread.");
 
-        setImmediate(() => {
-            expect(mockGetForumById).toBeCalledWith(10);
-            expect(mockAddThread).toBeCalledWith({ forumId: 10, name: "New title", userId: 1 });
-
-            donecallback();
-        });
+        expect(mockGetForumById).toBeCalledWith(10);
+        expect(mockAddThread).toBeCalledWith({ forumId: 10, name: "New title", userId: 1 });
+        expect(mockAddThread).toBeCalled();
     });
 
-    test("Add message error - throws error", async (donecallback) => {
+    test("Add message error - throws error", async () => {
         const mockGetForumById = jest.fn((): IForum => ({
             created: 1,
             id: 10,
@@ -208,18 +199,14 @@ describe("addThread", () => {
 
         const result = async () => await addThread(10, 1, "New title", "New message");
 
-        expect(result).rejects.toThrowError("Failed to add message.");
+        await expect(result).rejects.toThrowError("Failed to add message.");
 
-        setImmediate(() => {
-            expect(mockGetForumById).toBeCalledWith(10);
-            expect(mockAddThread).toBeCalledWith({ forumId: 10, name: "New title", userId: 1 });
-            expect(mockAddMessage).toBeCalledWith(30, 1, "New message");
-
-            donecallback();
-        });
+        expect(mockGetForumById).toBeCalledWith(10);
+        expect(mockAddThread).toBeCalledWith({ forumId: 10, name: "New title", userId: 1 });
+        expect(mockAddMessage).toBeCalledWith(30, 1, "New message");
     });
 
-    test("Add thread - success", async (donecallback) => {
+    test("Add thread - success", async () => {
         const mockGetForumById = jest.fn((): IForum => ({
             created: 1,
             id: 10,
@@ -257,12 +244,8 @@ describe("addThread", () => {
 
         expect(result!.id).toBe(30);
 
-        setImmediate(() => {
-            expect(mockGetForumById).toBeCalledWith(10);
-            expect(mockAddThread).toBeCalledWith({ forumId: 10, name: "New title", userId: 1 });
-            expect(mockAddMessage).toBeCalledWith(30, 1, "New message");
-
-            donecallback();
-        });
+        expect(mockGetForumById).toBeCalledWith(10);
+        expect(mockAddThread).toBeCalledWith({ forumId: 10, name: "New title", userId: 1 });
+        expect(mockAddMessage).toBeCalledWith(30, 1, "New message");
     });
 });
