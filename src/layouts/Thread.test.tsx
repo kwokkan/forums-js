@@ -1,18 +1,13 @@
 /**
  * @jest-environment jsdom
 */
-import { mount } from "enzyme";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import React from "react";
-import { act } from "react-dom/test-utils";
 import { create } from "react-test-renderer";
 import { IThread } from "../types/IThread";
 import { IUser } from "../types/IUser";
-import { setupEnzyme } from "../utils/testUtils";
 import { Thread } from "./Thread";
-
-beforeAll(() => {
-    setupEnzyme();
-});
 
 test("Renders with no messages", () => {
     const thread: IThread = {
@@ -113,17 +108,13 @@ test("onNewMessage callback called", async () => {
         name: "Test user"
     };
 
-    let wrapper = mount(
+    render(
         <Thread thread={thread} user={user} onNewMessage={mockOnAddNewMessage} />
     );
 
-    act(() => {
-        wrapper.find("textarea").simulate("change", { target: { value: "New message" } });
-    });
+    userEvent.type(screen.getByRole("textbox"), "New message");
 
-    await act(async () => {
-        wrapper.find("button").simulate("click");
-    })
+    userEvent.click(screen.getByText("Submit"));
 
     expect(mockOnAddNewMessage).toBeCalledWith(1, "New message");
 });

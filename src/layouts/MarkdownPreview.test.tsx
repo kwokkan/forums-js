@@ -1,15 +1,10 @@
 /**
  * @jest-environment jsdom
 */
-import { mount } from "enzyme";
-import { act } from "react-dom/test-utils";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { create } from "react-test-renderer";
-import { setupEnzyme } from "../utils/testUtils";
 import { MarkdownPreview } from "./MarkdownPreview";
-
-beforeAll(() => {
-    setupEnzyme();
-});
 
 test("Renders without error - edit mode", () => {
     const content = "# header";
@@ -22,16 +17,11 @@ test("Renders without error - edit mode", () => {
 
 test("Renders without error - preview mode", () => {
     const content = "# header";
-    let wrapper = mount(
+    render(
         <MarkdownPreview content={content} />
     );
 
-    act(() => {
-        wrapper.find("li.preview-strip-2 a").simulate("click");
-    });
+    userEvent.click(screen.getByText("Preview"));
 
-    wrapper = wrapper.update();
-
-    expect(wrapper.debug()).toMatchSnapshot();
-    expect(wrapper.find(".preview-strip-2 .rs-nav-item-active").length).toStrictEqual(1);
+    expect(screen.getByRole("heading", { level: 1 }));
 });
