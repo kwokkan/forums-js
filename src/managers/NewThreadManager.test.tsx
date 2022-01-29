@@ -1,21 +1,16 @@
 /**
  * @jest-environment jsdom
 */
-import { mount } from "enzyme";
-import { act } from "react-dom/test-utils";
-import { create } from "react-test-renderer";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+import renderer from "react-test-renderer";
 import { IThread } from "../types/IThread";
-import { setupEnzyme } from "../utils/testUtils";
-
-beforeAll(() => {
-    setupEnzyme();
-});
 
 test("Renders without error", () => {
     jest.isolateModules(() => {
     const { NewThreadManager } = require("./NewThreadManager");
 
-        const tree = create(
+        const tree = renderer.create(
             <NewThreadManager forumId={10} />
         ).toJSON();
 
@@ -51,18 +46,14 @@ test("onNewThread callback called", (doneCallback) => {
 
         const { NewThreadManager } = await import("./NewThreadManager");
 
-        let wrapper = mount(
+        render(
             <NewThreadManager forumId={10} />
         );
 
-        await act(() => {
-            wrapper.find('input[name="title"]').simulate("change", { target: { value: "New title" } });
-            wrapper.find('textarea[name="message"]').simulate("change", { target: { value: "New message" } });
-        });
+        userEvent.type(screen.getByLabelText("Title"), "New title");
+        userEvent.type(screen.getByLabelText("Message"), "New message");
 
-        await act(async () => {
-            wrapper.find("button").simulate("click");
-        });
+        userEvent.click(screen.getByRole("button"));
 
         setImmediate(() => {
             expect(mockAddThread).toBeCalledWith({ forumId: 10, title: "New title", message: "New message" });
