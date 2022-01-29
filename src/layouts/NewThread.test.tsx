@@ -1,15 +1,10 @@
 /**
  * @jest-environment jsdom
  */
-import { mount } from "enzyme";
-import { act } from "react-dom/test-utils";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { create } from "react-test-renderer";
-import { setupEnzyme } from "../utils/testUtils";
 import { NewThread } from "./NewThread";
-
-beforeAll(() => {
-    setupEnzyme();
-});
 
 test("Renders without error", () => {
     const tree = create(
@@ -22,18 +17,14 @@ test("Renders without error", () => {
 test("onNewThread callback called", async () => {
     const mockOnNewThread = jest.fn();
 
-    const wrapper = mount(
+    render(
         <NewThread onNewThread={mockOnNewThread} />
     );
 
-    act(() => {
-        wrapper.find('input[name="title"]').simulate("change", { target: { value: "New title" } });
-        wrapper.find('textarea[name="message"]').simulate("change", { target: { value: "New message" } });
-    });
+    userEvent.type(screen.getByLabelText("Title"), "New title");
+    userEvent.type(screen.getByLabelText("Message"), "New message");
 
-    await act(async () => {
-        wrapper.find("button").simulate("click");
-    })
+    userEvent.click(screen.getByRole("button"));
 
     expect(mockOnNewThread).toBeCalledWith("New title", "New message");
 });
