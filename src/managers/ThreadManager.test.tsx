@@ -1,17 +1,12 @@
 /**
  * @jest-environment jsdom
 */
-import { mount } from "enzyme";
-import { act } from "react-dom/test-utils";
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
 import { create } from "react-test-renderer";
 import { IMessage } from "../types/IMessage";
 import { IThread } from "../types/IThread";
 import { IUser } from "../types/IUser";
-import { setupEnzyme } from "../utils/testUtils";
-
-beforeAll(() => {
-    setupEnzyme();
-});
 
 test("Renders without error", () => {
     jest.isolateModules(() => {
@@ -69,17 +64,13 @@ test("onNewMessage callback called", (doneCallback) => {
 
         const { ThreadManager } = await import("./ThreadManager");
 
-        let wrapper = mount(
+        render(
             <ThreadManager thread={thread} user={user} />
         );
 
-        act(() => {
-            wrapper.find("textarea").simulate("change", { target: { value: "New message" } });
-        });
+        userEvent.type(screen.getByRole("textbox"), "New message");
 
-        await act(async () => {
-            wrapper.find("button").simulate("click");
-        });
+        userEvent.click(screen.getByText("Submit"));
 
         expect(mockAddMessage).toBeCalledWith(1, "New message");
 
