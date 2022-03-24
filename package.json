@@ -19,7 +19,7 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-markdown": "6.0.3",
-    "rsuite": "4.10.2"
+    "rsuite": "5.6.6"
   },
   "devDependencies": {
     "@testing-library/react": "12.1.4",
