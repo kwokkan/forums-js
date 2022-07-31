@@ -2,12 +2,11 @@
 
 exports[`Renders without errors 1`] = `
 <div
-  className="rs-panel rs-panel-default"
+  className="rs-panel"
 >
   <div
-    className="rs-panel-heading"
-    onClick={[Function]}
-    role="rowheader"
+    aria-expanded={false}
+    className="rs-panel-header"
     tabIndex={-1}
   >
     <h3
@@ -18,12 +17,13 @@ exports[`Renders without errors 1`] = `
   </div>
   <div
     className="rs-panel-body"
+    role="region"
   >
-    <div
+    <main
       className="rs-content"
     >
       Forums JS is a forums app written in JS.
-    </div>
+    </main>
   </div>
 </div>
 `;

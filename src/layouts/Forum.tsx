@@ -1,12 +1,12 @@
 import Link from "next/link";
 import React, { Fragment } from "react";
-import { Button, Content, Panel, PanelGroup, Table } from "rsuite";
+import { Button, Content, Pagination, Panel, PanelGroup, Table } from "rsuite";
 import { IForum } from "../types/IForum";
 import { IThread } from "../types/IThread";
 import { IUser } from "../types/IUser";
 import { formatDate } from "../utils/dateUtils";
 
-const { Column, HeaderCell, Cell, Pagination } = Table;
+const { Column, HeaderCell, Cell } = Table;
 
 export interface IProps {
     forum: IForum;
@@ -53,7 +53,7 @@ export function Forum({ forum, user }: IProps) {
                             </Column>
                         </Table>
 
-                        <Pagination displayLength={10} total={forum.threads.length} >
+                        <Pagination limit={10} total={forum.threads.length}>
                         </Pagination>
                     </PanelGroup>
                 }

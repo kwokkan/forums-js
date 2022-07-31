@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+*/
 import React from "react";
 import { create } from "react-test-renderer";
 import { IForum } from "../types/IForum";

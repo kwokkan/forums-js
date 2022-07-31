@@ -2,7 +2,9 @@
 
 exports[`Renders with message 1`] = `
 <div
-  className="rs-message rs-message-info rs-message-show rs-message-has-title rs-message-has-icon"
+  className="rs-message rs-message-info rs-message-show rs-message-has-icon"
+  role="alert"
+  title="Testing"
 >
   <div
     className="rs-message-container"
@@ -10,18 +12,25 @@ exports[`Renders with message 1`] = `
     <div
       className="rs-message-icon-wrapper"
     >
-      <i
-        className="rs-icon rs-icon-info"
-      />
+      <svg
+        aria-hidden={true}
+        aria-label="info"
+        className="rs-icon"
+        data-category="legacy"
+        fill="currentColor"
+        focusable={false}
+        height="1em"
+        viewBox="0 0 14 14"
+        width="1em"
+      >
+        <path
+          d="M7 14A7 7 0 117 0a7 7 0 010 14zm0-9.333a1.167 1.167 0 100-2.334 1.167 1.167 0 000 2.334zm0 1.166c-.644 0-1.167.522-1.167 1.167v3.5a1.167 1.167 0 002.334 0V7c0-.644-.522-1.167-1.167-1.167z"
+        />
+      </svg>
     </div>
     <div
       className="rs-message-content"
     >
-      <h5
-        className="rs-message-header"
-      >
-        Testing
-      </h5>
       <div
         className="rs-message-body"
       >

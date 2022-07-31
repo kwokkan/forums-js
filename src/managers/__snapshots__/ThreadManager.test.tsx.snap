@@ -2,12 +2,11 @@
 
 exports[`Renders without error 1`] = `
 <div
-  className="rs-panel rs-panel-default"
+  className="rs-panel"
 >
   <div
-    className="rs-panel-heading"
-    onClick={[Function]}
-    role="rowheader"
+    aria-expanded={false}
+    className="rs-panel-header"
     tabIndex={-1}
   >
     <h3
@@ -18,6 +17,7 @@ exports[`Renders without error 1`] = `
   </div>
   <div
     className="rs-panel-body"
+    role="region"
   >
     <div
       className="rs-panel-group"

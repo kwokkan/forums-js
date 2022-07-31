@@ -1,3 +1,6 @@
+/**
+ * @jest-environment jsdom
+*/
 import { create } from "react-test-renderer";
 import { ProviderType, SignIn } from "./SignIn";
 
