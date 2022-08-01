@@ -1,12 +1,11 @@
 import Link from "next/link";
 import React, { Fragment } from "react";
-import { Button, Content, Panel, PanelGroup, Table } from "rsuite";
+import { Button, Content, Pagination, Panel, PanelGroup, Table } from "rsuite";
 import { IForum } from "../types/IForum";
-import { IThread } from "../types/IThread";
 import { IUser } from "../types/IUser";
 import { formatDate } from "../utils/dateUtils";
 
-const { Column, HeaderCell, Cell, Pagination } = Table;
+const { Column, HeaderCell, Cell } = Table;
 
 export interface IProps {
     forum: IForum;
@@ -44,16 +43,16 @@ export function Forum({ forum, user }: IProps) {
                         <Table data={forum.threads} autoHeight wordWrap>
                             <Column flexGrow={11}>
                                 <HeaderCell>Threads</HeaderCell>
-                                <Cell>{(x: IThread) => <Link href={`/threads/${x.id}`}><a>{x.name}</a></Link>}</Cell>
+                                <Cell>{(x) => <Link href={`/threads/${x.id}`}><a>{x.name}</a></Link>}</Cell>
                             </Column>
 
                             <Column flexGrow={1}>
                                 <HeaderCell>Last post</HeaderCell>
-                                <Cell>{(x: IThread) => formatDate(x.created)}</Cell>
+                                <Cell>{(x) => formatDate(x.created)}</Cell>
                             </Column>
                         </Table>
 
-                        <Pagination displayLength={10} total={forum.threads.length} >
+                        <Pagination limit={10} total={forum.threads.length}>
                         </Pagination>
                     </PanelGroup>
                 }
