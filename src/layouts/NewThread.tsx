@@ -1,7 +1,7 @@
-import { useState } from "react";
+import { ForwardedRef, forwardRef, useState } from "react";
 import { Button, Content, Form, Input, Panel, PanelGroup } from "rsuite";
 
-const Textarea = React.forwardRef((props, ref) => <Input {...props} as="textarea" ref={ref} />);
+const Textarea = forwardRef((props, ref: ForwardedRef<HTMLTextAreaElement>) => <Input {...props} as="textarea" ref={ref} rows={10} />);
 
 interface IProps {
     onNewThread?: (title: string, message: string) => Promise<void>;
@@ -30,7 +30,7 @@ export function NewThread(props: IProps) {
 
                         <Form.Group controlId="message">
                             <Form.ControlLabel>Message</Form.ControlLabel>
-                            <Form.Control rows={10} name="message" accepter={Textarea} className="mb-3" value={message} onChange={setMessage} />
+                            <Form.Control name="message" accepter={Textarea} className="mb-3" value={message} onChange={setMessage} />
                         </Form.Group>
                     </Form>
                 </Content>
