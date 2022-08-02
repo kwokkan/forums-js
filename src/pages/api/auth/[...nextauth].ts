@@ -1,23 +1,24 @@
-import { IncomingMessage, ServerResponse } from "http";
-import NextAuth, { IProviderOptions } from "next-auth";
-import Providers from "next-auth/providers";
+import { NextApiRequest, NextApiResponse } from "next";
+import NextAuth, { NextAuthOptions } from "next-auth";
+import GitHubProvider from "next-auth/providers/github";
 import { addLog } from "../../../services/logService";
 import { getOrCreateAuthUser } from "../../../services/userService";
 import { authConfig } from "../../../utils/config";
 
-const options: IProviderOptions = {
+const options: NextAuthOptions = {
     debug: true,
     providers: [
-        Providers.GitHub({
+        GitHubProvider({
             clientId: authConfig.github.id!,
-            clientSecret: authConfig.github.secret,
-            scope: []
+            clientSecret: authConfig.github.secret!,
+            authorization: {
+                params: {
+                    scope: ""
+                }
+            }
         }),
     ],
     events: {
-        error: async (message) => {
-            await addLog("[events:error]", message);
-        },
         session: async (message) => {
             await addLog("[events:session]", message);
         },
@@ -32,22 +33,22 @@ const options: IProviderOptions = {
         signIn: "/auth/signin"
     },
     callbacks: {
-        signIn: async (user, account, profile) => {
+        signIn: async ({ user, account, profile }) => {
             await addLog("[callbacks:signIn]", user, account, profile);
 
             return true;
         },
-        redirect: async (url, baseUrl) => {
+        redirect: async ({ url, baseUrl }) => {
             await addLog("[callbacks:redirect]", url, baseUrl);
 
             return url;
         },
-        jwt: async (token, user, account, profile, isNewUser) => {
+        jwt: async ({ token, user, account, profile, isNewUser }) => {
             await addLog("[callbacks:jwt]", token, user, account, profile, isNewUser);
 
             if (account) {
                 await addLog("[callbacks:jwt]", "Creating session");
-                const authUser = await getOrCreateAuthUser(account.provider, account.id, user.name);
+                const authUser = await getOrCreateAuthUser(account.provider, account.id as string, user!.name!);
 
                 token.forumsUser = authUser;
 
@@ -56,8 +57,8 @@ const options: IProviderOptions = {
 
             return token;
         },
-        session: async (session, user, sessionToken) => {
-            await addLog("[callbacks:session]", session, user, sessionToken);
+        session: async ({ session, user, token }) => {
+            await addLog("[callbacks:session]", session, user, token);
 
             session.forumsUser = user.forumsUser;
 
@@ -66,6 +67,6 @@ const options: IProviderOptions = {
     }
 };
 
-const handler = (req: IncomingMessage, res: ServerResponse) => NextAuth(req, res, options); 
+const handler = (req: NextApiRequest, res: NextApiResponse) => NextAuth(req, res, options); 
 
 export default handler;

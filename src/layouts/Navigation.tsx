@@ -1,5 +1,5 @@
 import { Explore, Gear, Rate } from "@rsuite/icons";
-import { signOut } from "next-auth/client";
+import { signOut } from "next-auth/react";
 import Link from "next/link";
 import React, { Fragment } from "react";
 import { Nav, Navbar } from "rsuite";
@@ -49,7 +49,7 @@ export function Navigation(props: IProps) {
                         <Link href="/settings" passHref>
                             <Nav.Item icon={<Gear />}>Settings</Nav.Item>
                         </Link>
-                        <Nav.Item icon={<Gear />} onSelect={signOut}>Logout</Nav.Item>
+                        <Nav.Item icon={<Gear />} onSelect={() => signOut}>Logout</Nav.Item>
                     </Fragment>
                     :
                     <Link href="/api/auth/signin" passHref>

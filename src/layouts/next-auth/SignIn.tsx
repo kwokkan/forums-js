@@ -1,5 +1,6 @@
-import { signIn } from "next-auth/client";
+import { signIn } from "next-auth/react";
 import { Button, Content, Panel } from "rsuite";
+import { INextProvider } from "../../types/types";
 
 export type ProviderType = Record<string, INextProvider>;
 

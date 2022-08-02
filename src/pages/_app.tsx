@@ -1,4 +1,4 @@
-import { getSession, Provider } from "next-auth/client";
+import { getSession, SessionProvider } from "next-auth/react";
 import React from "react";
 import { SessionAppWrapper } from "../layouts/SessionAppWrapper";
 import { GetTypedServerSideProps } from '../types/pageTypes';
@@ -18,9 +18,9 @@ export const getServerSideProps: GetTypedServerSideProps<{}> = async (context) =
 
 function MyApp({ Component, pageProps }: any) {
     return (
-        <Provider session={pageProps.session}>
+        <SessionProvider session={pageProps.session}>
             <SessionAppWrapper Component={Component} pageProps={pageProps} />
-        </Provider>
+        </SessionProvider>
     );
 }
 

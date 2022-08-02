@@ -1,5 +1,5 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { getSession } from "next-auth/client";
+import { getSession } from "next-auth/react";
 import { addThread } from "../../../services/threadService";
 import { logDebug } from "../../../utils/logging";
 import { parseIntParam } from "../../../utils/paramUtil";
