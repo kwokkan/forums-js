@@ -1,10 +1,12 @@
-import { providers } from "next-auth/client";
+import GitHubProvider from "next-auth/providers/github";
 import { SignIn } from "../../layouts/next-auth/SignIn";
 import { Title } from "../../layouts/Title";
 import { GetTypedServerSideProps } from "../../types/pageTypes";
 
 export const getServerSideProps: GetTypedServerSideProps<{}> = async (context) => {
-    const providersObj = await providers(context);
+    const providersObj = {
+        GitHub: GitHubProvider
+    };
 
     return {
         props: {

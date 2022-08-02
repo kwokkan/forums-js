@@ -1,4 +1,4 @@
-import { getSession } from "next-auth/client";
+import { getSession } from "next-auth/react";
 import { Fragment } from "react";
 import { Forum, IProps } from "../../layouts/Forum";
 import { Title } from "../../layouts/Title";

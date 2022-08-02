@@ -1,6 +1,7 @@
 import { NextApiRequest, NextApiResponse } from "next";
-import { getSession } from "next-auth/client";
+import { getSession } from "next-auth/react";
 import { addMessage } from "../../../services/threadService";
+import { INextSession } from "../../../types/types";
 import { logDebug } from "../../../utils/logging";
 import { parseIntParam } from "../../../utils/paramUtil";
 
@@ -11,7 +12,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
         return res.status(405).end();
     }
 
-    const session = await getSession({ req });
+    const session: INextSession | null = await getSession({ req });
 
     if (!session) {
         return res.status(401).end();

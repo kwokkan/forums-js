@@ -1,4 +1,4 @@
-import { signOut } from "next-auth/client";
+import { signOut } from "next-auth/react";
 import Link from "next/link";
 import React from "react";
 import { Icon, Nav, Navbar } from "rsuite";
