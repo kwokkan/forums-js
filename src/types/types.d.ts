@@ -22,4 +22,8 @@ declare module "next-auth" {
     interface Session {
         forumsUser?: IForumSessionUser;
     }
+
+    interface User {
+        forumsUser?: IForumSessionUser;
+    }
 }
