@@ -1,5 +1,4 @@
 import { useSession } from "next-auth/react";
-import { IUser } from "../types/IUser";
 import { App } from "./App";
 import { Title } from "./Title";
 
@@ -12,7 +11,7 @@ export function SessionAppWrapper({ Component, pageProps }: IProps) {
     const { data: session } = useSession();
 
     return (
-        <App title="Forums JS" user={session?.forumsUser as IUser}>
+        <App title="Forums JS" user={session?.forumsUser}>
             <Title />
             <Component {...pageProps} />
         </App>
