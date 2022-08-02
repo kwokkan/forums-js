@@ -3,6 +3,7 @@ import React from "react";
 import { SessionAppWrapper } from "../layouts/SessionAppWrapper";
 import { GetTypedServerSideProps } from '../types/pageTypes';
 
+import "rsuite/dist/rsuite.min.css";
 import "../styles/styles.scss";
 
 export const getServerSideProps: GetTypedServerSideProps<{}> = async (context) => {

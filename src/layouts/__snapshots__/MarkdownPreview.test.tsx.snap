@@ -5,55 +5,43 @@ exports[`Renders without error - edit mode 1`] = `
   <div
     className="rs-nav rs-nav-subtle rs-nav-horizontal"
   >
-    <ul>
-      <li
-        className="rs-nav-item preview-strip-1 rs-nav-item-active"
+    <a
+      aria-selected={true}
+      className="preview-strip-1 rs-nav-item rs-nav-item-active"
+      href="#"
+      onClick={[Function]}
+      role="button"
+    >
+      Text
+      <span
+        className="rs-ripple-pond"
       >
-        <a
-          className="rs-nav-item-content"
-          onClick={[Function]}
-          role="button"
-          tabIndex={0}
-        >
-          Text
-          <span
-            className="rs-ripple-pond"
-          >
-            <span
-              className="rs-ripple"
-              style={Object {}}
-            />
-          </span>
-        </a>
-      </li>
-      <li
-        className="rs-nav-item preview-strip-2"
+        <span
+          className="rs-ripple"
+        />
+      </span>
+    </a>
+    <a
+      className="preview-strip-2 rs-nav-item"
+      href="#"
+      onClick={[Function]}
+      role="button"
+    >
+      Preview
+      <span
+        className="rs-ripple-pond"
       >
-        <a
-          className="rs-nav-item-content"
-          onClick={[Function]}
-          role="button"
-          tabIndex={0}
-        >
-          Preview
-          <span
-            className="rs-ripple-pond"
-          >
-            <span
-              className="rs-ripple"
-              style={Object {}}
-            />
-          </span>
-        </a>
-      </li>
-    </ul>
+        <span
+          className="rs-ripple"
+        />
+      </span>
+    </a>
     <div
-      className="rs-nav-waterline"
+      className="rs-nav-bar"
     />
   </div>
   <textarea
     className="rs-input"
-    id={null}
     onChange={[Function]}
     onKeyDown={[Function]}
     style={

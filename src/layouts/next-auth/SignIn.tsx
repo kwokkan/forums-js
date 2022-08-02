@@ -1,5 +1,5 @@
 import { signIn } from "next-auth/react";
-import { Button, Content, Icon, Panel } from "rsuite";
+import { Button, Content, Panel } from "rsuite";
 import { INextProvider } from "../../types/types";
 
 export type ProviderType = Record<string, INextProvider>;
@@ -15,7 +15,6 @@ export function SignIn(props: IProps) {
             {Object.values(props.providers).map(x =>
                 <Panel key={x.id} header={
                     <h3>
-                        <Icon icon={x.id as any} size="2x" className="mr-3" />
                         {x.name}
                     </h3>
                 }>

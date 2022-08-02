@@ -1,5 +1,7 @@
-import { useState } from "react";
-import { Button, Content, ControlLabel, Form, FormControl, FormGroup, Panel, PanelGroup } from "rsuite";
+import { ForwardedRef, forwardRef, useState } from "react";
+import { Button, Content, Form, Input, Panel, PanelGroup } from "rsuite";
+
+const Textarea = forwardRef((props, ref: ForwardedRef<HTMLTextAreaElement>) => <Input {...props} as="textarea" ref={ref} rows={10} />);
 
 interface IProps {
     onNewThread?: (title: string, message: string) => Promise<void>;
@@ -21,15 +23,15 @@ export function NewThread(props: IProps) {
             <PanelGroup>
                 <Content>
                     <Form fluid>
-                        <FormGroup controlId="title">
-                            <ControlLabel>Title</ControlLabel>
-                            <FormControl name="title" value={title} onChange={setTitle} />
-                        </FormGroup>
+                        <Form.Group controlId="title">
+                            <Form.ControlLabel>Title</Form.ControlLabel>
+                            <Form.Control name="title" value={title} onChange={setTitle} />
+                        </Form.Group>
 
-                        <FormGroup controlId="message">
-                            <ControlLabel>Message</ControlLabel>
-                            <FormControl rows={10} name="message" componentClass="textarea" className="mb-3" value={message} onChange={setMessage} />
-                        </FormGroup>
+                        <Form.Group controlId="message">
+                            <Form.ControlLabel>Message</Form.ControlLabel>
+                            <Form.Control name="message" accepter={Textarea} className="mb-3" value={message} onChange={setMessage} />
+                        </Form.Group>
                     </Form>
                 </Content>
             </PanelGroup>

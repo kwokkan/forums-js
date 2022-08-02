@@ -15,9 +15,9 @@ module.exports = {
     setupFilesAfterEnv: [
         "<rootDir>/config/jest/setupAfterEnv.js"
     ],
-    testEnvironment:"node",
+    testEnvironment: "node",
     transform: {
-        "^.+\\.(js|jsx|ts|tsx)$": "babel-jest",
+        "^.+\\.(js|jsx|ts|tsx)$": ["babel-jest", { presets: ["next/babel"] }],
         "^.+\\.css$": "<rootDir>/config/jest/cssTransform.js",
     },
     transformIgnorePatterns: [

@@ -5,12 +5,11 @@ exports[`Renders with description 1`] = `
   className="rs-panel-group"
 >
   <div
-    className="rs-panel rs-panel-default rs-panel-bordered"
+    className="rs-panel rs-panel-bordered"
   >
     <div
-      className="rs-panel-heading"
-      onClick={[Function]}
-      role="rowheader"
+      aria-expanded={false}
+      className="rs-panel-header"
       tabIndex={-1}
     >
       <h3
@@ -27,14 +26,15 @@ exports[`Renders with description 1`] = `
     </div>
     <div
       className="rs-panel-body"
+      role="region"
     >
-      <div
+      <main
         className="rs-content"
       >
         <p>
           Forum description.
         </p>
-      </div>
+      </main>
     </div>
   </div>
 </div>
@@ -45,12 +45,11 @@ exports[`Renders with multiple forums 1`] = `
   className="rs-panel-group"
 >
   <div
-    className="rs-panel rs-panel-default rs-panel-bordered"
+    className="rs-panel rs-panel-bordered"
   >
     <div
-      className="rs-panel-heading"
-      onClick={[Function]}
-      role="rowheader"
+      aria-expanded={false}
+      className="rs-panel-header"
       tabIndex={-1}
     >
       <h3
@@ -67,15 +66,15 @@ exports[`Renders with multiple forums 1`] = `
     </div>
     <div
       className="rs-panel-body"
+      role="region"
     />
   </div>
   <div
-    className="rs-panel rs-panel-default rs-panel-bordered"
+    className="rs-panel rs-panel-bordered"
   >
     <div
-      className="rs-panel-heading"
-      onClick={[Function]}
-      role="rowheader"
+      aria-expanded={false}
+      className="rs-panel-header"
       tabIndex={-1}
     >
       <h3
@@ -92,6 +91,7 @@ exports[`Renders with multiple forums 1`] = `
     </div>
     <div
       className="rs-panel-body"
+      role="region"
     />
   </div>
 </div>
