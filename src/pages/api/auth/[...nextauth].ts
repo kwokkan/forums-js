@@ -48,7 +48,7 @@ const options: NextAuthOptions = {
 
             if (account) {
                 await addLog("[callbacks:jwt]", "Creating session");
-                const authUser = await getOrCreateAuthUser(account.provider, account.id as string, user!.name!);
+                const authUser = await getOrCreateAuthUser(account.provider, account.providerAccountId, user!.name!);
 
                 token.forumsUser = authUser;
 
@@ -60,7 +60,7 @@ const options: NextAuthOptions = {
         session: async ({ session, user, token }) => {
             await addLog("[callbacks:session]", session, user, token);
 
-            session.forumsUser = user.forumsUser;
+            session.forumsUser = token.forumsUser;
 
             return session;
         }
