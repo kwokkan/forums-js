@@ -27,3 +27,9 @@ declare module "next-auth" {
         forumsUser?: IForumSessionUser;
     }
 }
+
+declare module "next-auth/jwt" {
+    interface JWT {
+        forumsUser?: IForumSessionUser;
+    }
+}
