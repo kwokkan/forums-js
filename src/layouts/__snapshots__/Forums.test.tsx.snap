@@ -19,6 +19,7 @@ exports[`Renders with description 1`] = `
           href="/forums/1"
           onClick={[Function]}
           onMouseEnter={[Function]}
+          onTouchStart={[Function]}
         >
           First forum
         </a>
@@ -59,6 +60,7 @@ exports[`Renders with multiple forums 1`] = `
           href="/forums/1"
           onClick={[Function]}
           onMouseEnter={[Function]}
+          onTouchStart={[Function]}
         >
           First forum
         </a>
@@ -84,6 +86,7 @@ exports[`Renders with multiple forums 1`] = `
           href="/forums/2"
           onClick={[Function]}
           onMouseEnter={[Function]}
+          onTouchStart={[Function]}
         >
           Second forum
         </a>

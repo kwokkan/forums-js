@@ -34,6 +34,7 @@ exports[`Renders with custom child 1`] = `
             href="/"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             <svg
               aria-hidden={true}
@@ -97,6 +98,7 @@ exports[`Renders with custom child 1`] = `
             href="/about"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             About
             <span
@@ -147,6 +149,7 @@ exports[`Renders with custom child 1`] = `
             href="/api/auth/signin"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             <svg
               aria-hidden={true}
@@ -263,6 +266,7 @@ exports[`Renders with custom child and user 1`] = `
             href="/"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             <svg
               aria-hidden={true}
@@ -326,6 +330,7 @@ exports[`Renders with custom child and user 1`] = `
             href="/about"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             About
             <span
@@ -376,6 +381,7 @@ exports[`Renders with custom child and user 1`] = `
             href="/settings"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             <svg
               aria-hidden={true}
