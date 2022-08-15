@@ -34,6 +34,7 @@ exports[`Renders with session 1`] = `
             href="/"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             <svg
               aria-hidden={true}
@@ -97,6 +98,7 @@ exports[`Renders with session 1`] = `
             href="/about"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             About
             <span
@@ -147,6 +149,7 @@ exports[`Renders with session 1`] = `
             href="/settings"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             <svg
               aria-hidden={true}
@@ -296,6 +299,7 @@ exports[`Renders without session 1`] = `
             href="/"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             <svg
               aria-hidden={true}
@@ -359,6 +363,7 @@ exports[`Renders without session 1`] = `
             href="/about"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             About
             <span
@@ -409,6 +414,7 @@ exports[`Renders without session 1`] = `
             href="/api/auth/signin"
             onClick={[Function]}
             onMouseEnter={[Function]}
+            onTouchStart={[Function]}
           >
             <svg
               aria-hidden={true}
